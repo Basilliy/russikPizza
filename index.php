@@ -84,7 +84,7 @@ switch ($message) {
            $date = array(
            'recipient' => array('id' => "$id" ),
            'message' => array(
-                      "attachment" =>$URL
+                      "attachment" =>$Map 
                               )
            );
         break;
