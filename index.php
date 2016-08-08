@@ -36,8 +36,7 @@ $keyboardSet =[$buttonMenu,$buttonSite,$buttonLocation];
 
 
 switch ($message) {
-        case 'Generate':
-                                                                                                                                                        look here   |
+        case 'Generate':                                                                                                                                              
            $data = array(
            'recipient' => array('id' => "$id" ),
            'message' => array("text" => "Welcome",
@@ -45,7 +44,6 @@ switch ($message) {
             )
            );
         break;
-                                                                                      Look here   |
           default:
           $data = array(
            'recipient' => array('id' => "$id" ),
