@@ -64,7 +64,7 @@ $URL= array(
 $Map = array(
          "type" => "location",
          "payload" => array(
-               "coordinates" => array("lat": 55, "long": 37),
+               "coordinates" => array("lat"=> 55, "long"=> 37)
                
         )
  );
