@@ -35,6 +35,29 @@ $buttonSite = array(
 $keyboardSet =[$buttonMenu,$buttonSite,$buttonLocation];
 
 
+
+$site =json_encode(array(
+         "type" => "web_url",
+         "url" => " http://appartika.com ",
+         "title" => "Our web site"
+ ));
+$element = array(
+            "title" => "Appartika",
+            "image_url" => "https://presentpizza.herokuapp.com/appartika.jpg",
+            "subtitle" => "Click",
+            "buttons" => [$site]
+             );
+$URL= array(
+         "type" => "template",
+         "payload" => array(
+               "template_type" => "generic",
+               "elements" => [$element]
+        )
+ );
+
+
+
+
 switch ($message) {
         case 'Generate':                                                                                                                                              
            $data = array(
@@ -42,6 +65,20 @@ switch ($message) {
            'message' => array("text" => "Welcome",
            "quick_replies" => json_encode($keyboardSet)
             )
+           );
+        break;
+        case 'Visit our site':                                                                                                                                              
+           $data = array(
+           'recipient' => array('id' => "$id" ),
+           'message' => array("text" => " ",
+           "quick_replies" => json_encode($keyboardSet)
+            )
+           );
+           $date = array(
+           'recipient' => array('id' => "$id" ),
+           'message' => array(
+                      "attachment" =>$URL
+                              )
            );
         break;
           default:
