@@ -61,7 +61,7 @@ $URL= array(
         )
  );
 
-$Map= array(
+$Map = array(
          "type" => "location",
          "payload" => array(
                "coordinates" => array("lat": 55, "long": 37),
@@ -81,11 +81,11 @@ switch ($message) {
            );
         break;
         case 'Our location':                                                                                                                                              
-           $data = array(
+           $date = array(
            'recipient' => array('id' => "$id" ),
-           'message' => array("text" => "Welcome",
-           "quick_replies" => json_encode($keyboardSet)
-            )
+           'message' => array(
+                      "attachment" =>$Map
+                              )
            );
         break;
         case 'Visit our site':                                                                                                                                              
