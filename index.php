@@ -80,7 +80,7 @@ $Map = array(
 
 
 switch ($message) {
-        case 'Menu':
+        case 'Pizza Menu':
            $link =$this->connectToDB();
            $query = 'SELECT * FROM menu';
            $result = $link->query($query) or die('Запрос не удался: ' . mysql_error());
