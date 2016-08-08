@@ -32,7 +32,13 @@ $buttonSite = array(
         "payload" => "DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_buttonLocation"
  );
  
-$keyboardSet =[$buttonMenu,$buttonSite,$buttonLocation];
+ $buttonOffers = array(
+        "content_type" => "text",
+        "title" => "Top offers",
+        "payload" => "DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_buttonOffers"
+ );
+ 
+$keyboardSet =[$buttonMenu,$buttonSite,$buttonLocation, $buttonOffers];
 
 
 
@@ -60,6 +66,14 @@ $URL= array(
 
 switch ($message) {
         case 'Generate':                                                                                                                                              
+           $data = array(
+           'recipient' => array('id' => "$id" ),
+           'message' => array("text" => "Welcome",
+           "quick_replies" => json_encode($keyboardSet)
+            )
+           );
+        break;
+        case 'Our location':                                                                                                                                              
            $data = array(
            'recipient' => array('id' => "$id" ),
            'message' => array("text" => "Welcome",
