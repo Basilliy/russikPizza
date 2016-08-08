@@ -98,14 +98,14 @@ switch ($message) {
             "title" => "$button[$i]",
             "payload" => "$button[$i]"
             );
-          $keyboardSet[$i] = $button[$i];
+          $keyboardSet[$i] = "hi";
            }
 
            
            
            $data = array(
            'recipient' => array('id' => "$id" ),
-           'message' => array("text" => "Welcome",
+           'message' => array("text" => "Pizza type",
            "quick_replies" => json_encode($keyboardSet)
             )
            );
