@@ -137,7 +137,7 @@ switch ($message) {
           default:
            $before = file_get_contents("errors.txt");
            
-           if(strcmp($before,"Pizza type"))
+           if($before == "Pizza type")
            {
            $button = explode($findme, $rows['pizzaSize']);
            
