@@ -98,9 +98,9 @@ switch ($message) {
             "title" => "$button[$i]",
             "payload" => "$button[$i]"
             );
-            $keyboardSet[$i] = "hi";
+            $keyboardMenu[$i] = "hi";
            }
-            print_r($keyboardSet);
+            print_r($keyboardMenu);
            
           //$data = array(
           // 'recipient' => array('id' => "$id" ),
