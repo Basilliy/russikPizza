@@ -147,12 +147,12 @@ switch ($message) {
             
             for($j = 0; $j < count($button); $j ++){
             
-            ${$button[$i]}= array(
+            ${$button[$j]}= array(
             "content_type" => "text",
-            "title" => "$button[$i]",
+            "title" => "$button[$j]",
             "payload" => "$button[$i]"
             );
-            $keyboardSize[$i] = ${$button[$i]};
+            $keyboardSize[$j] = ${$button[$j]};
             
             }
             
