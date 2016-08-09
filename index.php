@@ -91,16 +91,16 @@ switch ($message) {
            $findme   = ',';
            $button = explode($findme, $rows['pizzaType']);
            
-           for($i = 0; $i < count($button); $i ++){
+           //for($i = 0; $i < count($button); $i ++){
             
-            ${$button[$i]}= array(
-            "content_type" => "text",
-            "title" => "$button[$i]",
-            "payload" => "$button[$i]"
-            );
-            $keyboardMenu[$i] = $button[$i];
-           }
-            print_r($keyboardMenu);
+           // ${$button[$i]}= array(
+           // "content_type" => "text",
+           //  title" => "$button[$i]",
+           // "payload" => "$button[$i]"
+           // );
+           // $keyboardMenu[$i] = $button[$i];
+           ///}
+            print_r($button);
           
            $data = array(
            'recipient' => array('id' => "$id" ),
