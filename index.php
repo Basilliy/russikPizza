@@ -14,6 +14,8 @@ $message = $fb->entry[0]->messaging[0]->message->text;
 $token = "EAAUZC7GZBxEEoBAOZCZCaTq85jvjA7wIZCvZAyK8NVTMJZAt1yoPZBqhHpavhomi0JJOgDaD6F4z3AVy62vXxX9ToZBZCY0oYo0xTMHBsQlUifR0qF4y3IKSb7CVDp7hQtBoDVWlt3t47so9aMZC0is2QrpKoO2ZBv9puX0rMRzhsTQnoAZDZD";
 $fp = json_decode(file_get_contents('user.json'), true);
 
+$before = file_get_contents("errors.txt");
+
 $host = 'upperl.mysql.ukraine.com.ua'; // адрес сервера 
 $database = 'upperl_vadik'; // имя базы данных
 $user = 'upperl_vadik'; // имя пользователя
@@ -21,6 +23,7 @@ $password = '2shmpzez'; // пароль
 $link = mysqli_connect($host, $user, $password,$database)
     or die('Не удалось соединиться: ' . mysql_error());
 //echo 'Соединение успешно установлено';
+
 
 
 $query = 'SELECT * FROM pizzaMenu';
@@ -135,10 +138,8 @@ switch ($message) {
            );
         break;
           default:
-           $before = file_get_contents("errors.txt");
-           
-           if($before == 'Pizza type')
-           {
+           switch($before){
+            case 'Pizza type':                                                                                                                                              
            $findme   = ',';
            $button = explode($findme, $rows['pizzaSize']);
            
@@ -160,16 +161,42 @@ switch ($message) {
            )
            );
            file_put_contents("errors.txt","Size");
-           }
-           else{
-             $data = array(
+             break;   
+             
+             case 'Size':                                                                                                                                              
+             $findme   = ',';
+           $button = explode($findme, $rows['pizzaSouce']);
+           
+           for($j = 0; $j < count($button); $j ++){
+            
+            ${$button[$j]}= array(
+            "content_type" => "text",
+            "title" => "$button[$j]",
+            "payload" => "$button[$j]"
+            );
+            $keyboardSouce[$j] = ${$button[$j]};
+            
+            }
+            
+            $data = array(
+           'recipient' => array('id' => "$id" ),
+           'message' => array("text" => "Souce",
+           "quick_replies" => json_encode($keyboardSouce)
+           )
+           );
+           file_put_contents("errors.txt","Souce");
+             break;  
+               
+            default:   
+               $data = array(
            'recipient' => array('id' => "$id" ),
            'message' => array("text" => "Size",
            "quick_replies" => json_encode($keyboardSet)
            )
-           );  
+           );    
            }
            
+          
            
 }           
            
