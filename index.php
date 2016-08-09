@@ -145,15 +145,16 @@ switch ($message) {
            
            
             
-            $data = array(
+            
+           
+           }
+           }
+           $data = array(
            'recipient' => array('id' => "$id" ),
            'message' => array("text" => "Size",
            
            )
            );
-           
-           }
-           }     
 }           
            
            
