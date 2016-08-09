@@ -103,14 +103,14 @@ switch ($message) {
             $keyboardMenu[$i] = ${$button[$i]};
             
             }
-            
+            $text = "Pizza type";
            $data = array(
            'recipient' => array('id' => "$id" ),
            'message' => array("text" => "Pizza type",
            "quick_replies" => json_encode($keyboardMenu)
            )
            );
-           file_put_contents("errors.txt","Pizza type");
+           file_put_contents("errors.txt",$text);
         break;
         case 'Our location':                                                                                                                                              
            $date = array(
