@@ -227,7 +227,7 @@ switch ($message) {
            );
            
            }
-           $query = 'INSERT INTO order (user_id) VALUES'.$id;
+           $query = "INSERT INTO order user_id VALUES ".$id;
            $link->prepare($query) or die('Запрос не удался: ' . mysql_error());
           
            
