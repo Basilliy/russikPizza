@@ -143,23 +143,12 @@ switch ($message) {
            if($message == $pizza[$i])
            {
            
-            $button = explode($findme, $rows['pizzaSize']);
-            
-            for($j = 0; $j < count($button); $j ++){
-            
-            ${$button[$j]}= array(
-            "content_type" => "text",
-            "title" => "$button[$j]",
-            "payload" => "$button[$j]"
-            );
-            $keyboardSize[$j] = ${$button[$j]};
-            
-            }
+           
             
             $data = array(
            'recipient' => array('id' => "$id" ),
            'message' => array("text" => "Size",
-           "quick_replies" => json_encode($keyboardSize)
+           
            )
            );
            
