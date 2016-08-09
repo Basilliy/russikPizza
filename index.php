@@ -93,12 +93,13 @@ switch ($message) {
            
            for($i = 0; $i < count($button); $i ++){
             
-            ${$button[$i]}= array(
-            "content_type" => "text",
-             title" => "$button[$i]",
-            "payload" => "$button[$i]"
-            );
-            file_put_contents("errors.txt","${$button[$i]}");
+           // ${$button[$i]}= array(
+           // "content_type" => "text",
+           //  title" => "$button[$i]",
+           // "payload" => "$button[$i]"
+           // );
+           ${$button[$i]} = $i;
+            file_put_contents("errors.txt",${$button[$i]});
             }
             
            
