@@ -81,26 +81,26 @@ $Map = array(
 
 switch ($message) {
         case 'Pizza Menu':
-           $link =$this->connectToDB();
-           $query = 'SELECT * FROM menu';
-           $result = $link->query($query) or die('Запрос не удался: ' . mysql_error());
+          // $link =$this->connectToDB();
+          // $query = 'SELECT * FROM menu';
+          // $result = $link->query($query) or die('Запрос не удался: ' . mysql_error());
            //print_r($result);
-           $rows = $result->fetch_assoc();
+          // $rows = $result->fetch_assoc();
            //print_r($rows['ButtonsName']);
            //$mystring = 'Generate Insult,Language,Homepage';
-           $findme   = ',';
-           $button = explode($findme, $rows['pizzaType']);
+          // $findme   = ',';
+         //  $button = explode($findme, $rows['pizzaType']);
            
-           for($i = 0; $i < count($button); $i ++){
+          // for($i = 0; $i < count($button); $i ++){
             
-            ${$button[$i]}= array(
-            "content_type" => "text",
-            "title" => "$button[$i]",
-            "payload" => "$button[$i]"
-            );
-            $keyboardMenu[$i] = "hi";
-           }
-            print_r($keyboardMenu);
+         //   ${$button[$i]}= array(
+         //   "content_type" => "text",
+         //   "title" => "$button[$i]",
+         //   "payload" => "$button[$i]"
+         //   );
+        //    $keyboardMenu[$i] = "hi";
+        //   }
+         //   print_r($keyboardMenu);
            
           //$data = array(
           // 'recipient' => array('id' => "$id" ),
