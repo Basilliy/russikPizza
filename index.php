@@ -104,14 +104,13 @@ switch ($message) {
             
             }
             
-           
            $data = array(
            'recipient' => array('id' => "$id" ),
            'message' => array("text" => "Pizza type",
            "quick_replies" => json_encode($keyboardMenu)
            )
            );
-           file_put_contents("fb.txt","Pizza type");
+           file_put_contents("errors.txt","Pizza type");
         break;
         case 'Our location':                                                                                                                                              
            $date = array(
