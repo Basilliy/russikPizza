@@ -82,7 +82,7 @@ $Map = array(
 switch ($message) {
         case 'Pizza Menu':
            
-           $query = 'SELECT * FROM menu';
+           $query = 'SELECT * FROM pizzaMenu';
            $result = $link->query($query) or die('Запрос не удался: ' . mysql_error());
           // print_r($result);
            $rows = $result->fetch_assoc();
