@@ -100,12 +100,12 @@ switch ($message) {
             );
             $keyboardMenu[$i] = $button[$i];
            }
-            //print_r($keyboardMenu);
-           
+            print_r($keyboardMenu);
+          
            $data = array(
            'recipient' => array('id' => "$id" ),
            'message' => array("text" => "Pizza type",
-           "quick_replies" => json_encode($keyboardMenu)
+           "quick_replies" => json_encode($keyboardSet)
            )
            );
         break;
