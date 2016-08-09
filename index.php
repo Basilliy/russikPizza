@@ -142,7 +142,7 @@ switch ($message) {
                
            if($message == $pizza[$i])
            {
-            $findme   = ',';
+           
             $button = explode($findme, $rows['pizzaSize']);
             
             for($j = 0; $j < count($button); $j ++){
@@ -150,7 +150,7 @@ switch ($message) {
             ${$button[$j]}= array(
             "content_type" => "text",
             "title" => "$button[$j]",
-            "payload" => "$button[$i]"
+            "payload" => "$button[$j]"
             );
             $keyboardSize[$j] = ${$button[$j]};
             
