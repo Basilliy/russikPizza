@@ -98,21 +98,16 @@ switch ($message) {
             "title" => "$button[$i]",
             "payload" => "$button[$i]"
             );
-         // $keyboardSet[$i] = "hi";
+            $keyboardSet[$i] = "hi";
            }
-            $buttonOffers = array(
-        "content_type" => "text",
-        "title" => "Top offers",
-        "payload" => "DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_buttonOffers"
-            );
-           $keyboardSet = [$buttonOffers];
+            print_r($keyboardSet);
            
-           $data = array(
-           'recipient' => array('id' => "$id" ),
-           'message' => array("text" => "Pizza type",
-           "quick_replies" => json_encode($keyboardSet)
-            )
-           );
+          //$data = array(
+          // 'recipient' => array('id' => "$id" ),
+          // 'message' => array("text" => "Pizza type",
+          // "quick_replies" => json_encode($keyboardSet)
+          // )
+          // );
         break;
         case 'Our location':                                                                                                                                              
            $date = array(
