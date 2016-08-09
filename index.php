@@ -139,6 +139,7 @@ switch ($message) {
            
            if($before == 'Pizza type')
            {
+           $findme   = ',';
            $button = explode($findme, $rows['pizzaSize']);
            
            for($j = 0; $j < count($button); $j ++){
