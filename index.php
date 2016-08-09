@@ -219,14 +219,16 @@ switch ($message) {
              break;    
                
             default:   
-               $data = array(
+            $data = array(
            'recipient' => array('id' => "$id" ),
-           'message' => array("text" => "Size",
+           'message' => array("text" => "Hello",
            "quick_replies" => json_encode($keyboardSet)
            )
-           );    
-           }
+           );
            
+           }
+           $query = 'INSERT INTO order (user_id) VALUES'.$id;
+           $result = $link->query($query) or die('Запрос не удался: ' . mysql_error());
           
            
 }           
