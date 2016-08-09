@@ -23,6 +23,14 @@ $link = mysqli_connect($host, $user, $password,$database)
 //echo 'Соединение успешно установлено';
 
 
+$query = 'SELECT * FROM pizzaMenu';
+ $result = $link->query($query) or die('Запрос не удался: ' . mysql_error());
+     // print_r($result);
+           $rows = $result->fetch_assoc();
+//print_r($rows['pizzaType']);
+           //$mystring = 'Generate Insult,Language,Homepage';
+
+
 $buttonMenu = array(
         "content_type" => "text",
         "title" => "Pizza Menu",
@@ -81,13 +89,6 @@ $Map = array(
 
 switch ($message) {
         case 'Pizza Menu':
-           
-           $query = 'SELECT * FROM pizzaMenu';
-           $result = $link->query($query) or die('Запрос не удался: ' . mysql_error());
-          // print_r($result);
-           $rows = $result->fetch_assoc();
-           //print_r($rows['pizzaType']);
-           //$mystring = 'Generate Insult,Language,Homepage';
            $findme   = ',';
            $button = explode($findme, $rows['pizzaType']);
            
