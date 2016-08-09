@@ -103,7 +103,7 @@ switch ($message) {
             $keyboardMenu[$i] = ${$button[$i]};
             
             }
-            file_put_contents("errors.txt",$keyboardMenu);
+            
            
            $data = array(
            'recipient' => array('id' => "$id" ),
@@ -137,10 +137,10 @@ switch ($message) {
           default:
            $findme   = ',';
            $pizza = explode($findme, $rows['pizzaType']);
-           
+           file_put_contents("errors.txt",$pizza);
            for($i = 0; $i < count($pizza); $i ++){
                
-           if($message == $pizza[$i])
+           if(strcmp($message,$pizza[$i]))
            {
            
            $button = explode($findme, $rows['pizzaSize']);
