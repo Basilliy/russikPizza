@@ -187,6 +187,27 @@ switch ($message) {
            file_put_contents("errors.txt","Souce");
              break;  
                
+               
+               case 'Souce':                                                                                                                                              
+            $data = array(
+           'recipient' => array('id' => "$id" ),
+           'message' => array("text" => "Enter your phone number",
+           
+           )
+           );
+           file_put_contents("errors.txt","Phone");
+             break;  
+               
+              case 'Phone':                                                                                                                                              
+            $data = array(
+           'recipient' => array('id' => "$id" ),
+           'message' => array("text" => "Enter your Adress",
+           
+           )
+           );
+           file_put_contents("errors.txt","Adress");
+             break;    
+               
             default:   
                $data = array(
            'recipient' => array('id' => "$id" ),
