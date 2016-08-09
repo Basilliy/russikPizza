@@ -31,6 +31,7 @@ $query = 'SELECT * FROM pizzaMenu';
            //$mystring = 'Generate Insult,Language,Homepage';
 
 
+
 $buttonMenu = array(
         "content_type" => "text",
         "title" => "Pizza Menu",
@@ -134,12 +135,36 @@ switch ($message) {
            );
         break;
           default:
-          $data = array(
+           $findme   = ',';
+           $pizza = explode($findme, $rows['pizzaType']);
+           
+           for($i = 0; $i < count($pizza); $i ++){
+               
+           if($message == $pizza[$i])
+           {
+            $findme   = ',';
+            $button = explode($findme, $rows['pizzaSize']);
+            
+            for($j = 0; $j < count($button); $j ++){
+            
+            ${$button[$i]}= array(
+            "content_type" => "text",
+            "title" => "$button[$i]",
+            "payload" => "$button[$i]"
+            );
+            $keyboardSize[$i] = ${$button[$i]};
+            
+            }
+            
+            $data = array(
            'recipient' => array('id' => "$id" ),
-           'message' => array("text" => "Welcome",
-           "quick_replies" => json_encode($keyboardSet)
-            )
+           'message' => array("text" => "Size",
+           "quick_replies" => json_encode($keyboardSize)
+           )
            );
+           
+           }
+           }     
 }           
            
            
