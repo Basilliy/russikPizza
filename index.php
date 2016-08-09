@@ -187,8 +187,18 @@ switch ($message) {
            file_put_contents("errors.txt","Souce");
              break;  
                
-               
-               case 'Souce':                                                                                                                                              
+             case 'Souce':                                                                                                                                              
+            $data = array(
+           'recipient' => array('id' => "$id" ),
+           'message' => array("text" => "Enter quantity of pizza",
+           
+           )
+           );
+           file_put_contents("errors.txt","Quantity");
+             break;  
+              
+              
+              case 'Quantity':                                                                                                                                              
             $data = array(
            'recipient' => array('id' => "$id" ),
            'message' => array("text" => "Enter your phone number",
@@ -196,7 +206,7 @@ switch ($message) {
            )
            );
            file_put_contents("errors.txt","Phone");
-             break;  
+             break;
                
               case 'Phone':                                                                                                                                              
             $data = array(
