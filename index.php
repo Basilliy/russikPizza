@@ -101,7 +101,7 @@ switch ($message) {
            // $keyboardMenu[$i] = $button[$i];
            // }
             
-           file_put_contents("errors.txt",$button);
+           file_put_contents("errors.txt",$rows);
            $data = array(
            'recipient' => array('id' => "$id" ),
            'message' => array("text" => "Pizza type",
