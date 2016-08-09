@@ -106,7 +106,7 @@ switch ($message) {
            $data = array(
            'recipient' => array('id' => "$id" ),
            'message' => array("text" => "Pizza type",
-           "quick_replies" => json_encode($keyboardSet)
+           "quick_replies" => json_encode($keyboardMenu)
            )
            );
         break;
