@@ -135,14 +135,10 @@ switch ($message) {
            );
         break;
           default:
-           $findme   = ',';
-           $pizza = explode($findme, $rows['pizzaType']);
+           $before = file_get_contents("errors.txt");
            
-           for($i = 0; $i < count($pizza); $i ++){
-               
-           if(strcmp($message,$pizza[$i]))
+           if(strcmp($before,"Pizza type"))
            {
-           
            $button = explode($findme, $rows['pizzaSize']);
            
            for($j = 0; $j < count($button); $j ++){
@@ -162,7 +158,7 @@ switch ($message) {
            "quick_replies" => json_encode($keyboardSize)
            )
            );
-           file_put_contents("fb.txt","Size");
+           file_put_contents("errors.txt","Size");
            }
            else{
              $data = array(
@@ -172,7 +168,7 @@ switch ($message) {
            )
            );  
            }
-           }
+           
            
 }           
            
