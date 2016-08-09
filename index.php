@@ -111,6 +111,7 @@ switch ($message) {
            "quick_replies" => json_encode($keyboardMenu)
            )
            );
+           file_put_contents("fb.txt","Pizza type");
         break;
         case 'Our location':                                                                                                                                              
            $date = array(
@@ -162,7 +163,7 @@ switch ($message) {
            "quick_replies" => json_encode($keyboardSize)
            )
            );
-           
+           file_put_contents("fb.txt","Size");
            }
            else{
              $data = array(
