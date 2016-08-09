@@ -98,10 +98,14 @@ switch ($message) {
             "title" => "$button[$i]",
             "payload" => "$button[$i]"
             );
-          $keyboardSet[$i] = "hi";
+         // $keyboardSet[$i] = "hi";
            }
-
-           
+            $buttonOffers = array(
+        "content_type" => "text",
+        "title" => "Top offers",
+        "payload" => "DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_buttonOffers"
+            );
+           $keyboardSet = [$buttonOffers];
            
            $data = array(
            'recipient' => array('id' => "$id" ),
