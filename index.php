@@ -138,7 +138,7 @@ switch ($message) {
           default:
            $findme   = ',';
            $pizza = explode($findme, $rows['pizzaType']);
-           file_put_contents("errors.txt",$pizza);
+           
            for($i = 0; $i < count($pizza); $i ++){
                
            if(strcmp($message,$pizza[$i]))
