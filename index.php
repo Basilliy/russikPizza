@@ -98,10 +98,10 @@ switch ($message) {
             "title" => "$button[$i]",
             "payload" => "$button[$i]"
             );
-           //${$button[$i]} = $i;
-            file_put_contents("errors.txt",${$button[$i]});
-            }
+            $keyboardMenu[$i] = ${$button[$i]};
             
+            }
+            file_put_contents("errors.txt",$keyboardMenu);
            
            $data = array(
            'recipient' => array('id' => "$id" ),
