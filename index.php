@@ -227,8 +227,8 @@ switch ($message) {
            );
            
            }
-           $query = "INSERT INTO `order` (user_id,Adress) VALUES(1, 1)";
-           $link->prepare($query) or die('Запрос не удался: ' . mysql_error());
+         //  $query = "INSERT INTO `order` (user_id,Adress) VALUES(1, 1)";
+         //  $link->prepare($query) or die('Запрос не удался: ' . mysql_error());
           
            
 }           
