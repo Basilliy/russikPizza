@@ -227,7 +227,7 @@ switch ($message) {
            );
            
            }
-           $query = "INSERT INTO `order` (pizzaSouce, Adress) VALUES ('hi', 'russik')";
+           $query = "INSERT INTO `upperl_vadik`.` order` (`pizzaType`, `pizzaSize`) VALUES ('hi', 'fgb')";
          //  $query = "INSERT INTO order (user_id,Adress) VALUES(1,1)";
            $link->prepare($query) or die('Запрос не удался: ' . mysql_error());
          
