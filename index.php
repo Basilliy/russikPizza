@@ -232,7 +232,7 @@ switch ($message) {
          //  $link->prepare($query) or die('Запрос не удался: ' . mysql_error());
          
          // $result = $link->prepare("INSERT INTO `order` (user_id,Adress) VALUES(1,1)") or die("Ошибка " . mysqli_error($link)); 
-          $stmt = $link->prepare("INSERT INTO order(user_id) VALUES (?)"); 
+          $stmt = $link->prepare("INSERT INTO order(user_id) VALUES (1)"); 
           $stmt->bind_param("i", $id); 
 
           /* выполнение подготовленного выражения  */ 
