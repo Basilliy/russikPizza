@@ -23,10 +23,10 @@ $dbPass='2shmpzez';// пароль пользователя
 $link = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
 $link->set_charset("utf8");
 
- $stmt = $link->prepare("INSERT INTO order(user_id) VALUES (?)"); 
-          $stmt->bind_param("i", $id);
-          $stmt->execute();
-          $stmt->close(); 
+// $stmt = $link->prepare("INSERT INTO order(user_id) VALUES (?)"); 
+//          $stmt->bind_param("i", $id);
+//          $stmt->execute();
+//          $stmt->close(); 
 
 
 //$host = 'upperl.mysql.ukraine.com.ua'; // адрес сервера 
