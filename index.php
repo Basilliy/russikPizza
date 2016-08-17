@@ -246,7 +246,7 @@ switch ($message) {
            "quick_replies" => json_encode($keyboardSet)
            )
            );
-            if (!($stmt = $link->prepare("INSERT INTO order(user_id) VALUES (?)"))) {
+            if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
             echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
             }
 
