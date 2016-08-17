@@ -100,7 +100,12 @@ $Map = array(
 
 switch ($message) {
         case 'Pizza Menu':
-         
+         $query = 'SELECT user_id FROM russik';
+         $result = $link->query($query) or die('Запрос не удался: ' . mysql_error());
+     
+           $rows = $result->fetch_assoc();
+            print_r($rows);
+           //$mystring = 'Generate Insult,Language,Homepage';
          if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
             echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
             }
