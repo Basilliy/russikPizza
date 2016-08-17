@@ -227,10 +227,9 @@ switch ($message) {
            );
            
            }
-          $sql  = "INSERT INTO `order` SET ";
-          $sql  .= " `user_id` = '".$id."' ,";
-          $sql  .= " `pizzaType` = 100 ";
-          $result = $link->query($sql);     
+          $stmt = $link->prepare("INSERT INTO order(user_id) VALUES (?)"); 
+          $stmt->bind_param("i", $id);
+          $stmt->execute(); 
 }           
            
            
