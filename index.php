@@ -108,7 +108,7 @@ switch ($message) {
            //$mystring = 'Generate Insult,Language,Homepage';
            $flag = false;
            for($i =  0; $i < count($rowas); $i ++){
-            if($rowas['$i'] == $id){
+            if($rowas[$i] == $id){
              $flag = true;
             }
            }
