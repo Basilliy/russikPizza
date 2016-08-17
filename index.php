@@ -104,22 +104,29 @@ switch ($message) {
          $result = $link->query($query) or die('Запрос не удался: ' . mysql_error());
      
            $rowas = $result->fetch_assoc();
-            print_r($rowas);
+           // print_r($rowas);
            //$mystring = 'Generate Insult,Language,Homepage';
-         if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
-            echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
+           $flag = false;
+           for($i =  0; $i < count($rowas); $i ++){
+            if($rowas['$i'] == $id){
+             $flag = true;
             }
+           }
+           if($flag == true){
+                 if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
+               echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
+                }
 
-            /* подготавливаемый запрос, вторая стадия: привязка и выполнение */
+               /* подготавливаемый запрос, вторая стадия: привязка и выполнение */
             
-            if (!$stmt->bind_param("i", $id)) {
-            echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
-            }
+                if (!$stmt->bind_param("i", $id)) {
+                 echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
+                }
 
-            if (!$stmt->execute()) {
-            echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
+                if (!$stmt->execute()) {
+                echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
+                }
             }
-         
            $findme   = ',';
            $button = explode($findme, $rows['pizzaType']);
            
