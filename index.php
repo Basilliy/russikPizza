@@ -110,7 +110,7 @@ switch ($message) {
            for($i =  0; $i < count($rowas); $i ++){
             if($rowas[$i] == $id){
              $flag = "true";
-             file_put_contents("errors.txt", $rowas[$i]);
+             file_put_contents("errors.txt", $flag);
             }
             
            }
