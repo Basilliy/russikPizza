@@ -227,18 +227,18 @@ switch ($message) {
            );
          //  $query = 'SELECT * FROM pizzaMenu';
          //  $result = $link->query($query) or die('Запрос не удался: ' . mysql_error());
-         // $stmt = $link->prepare("INSERT INTO order(user_id) VALUES (?)"); 
-         // $stmt->bind_param("i", $id);
-         // $stmt->execute();
-           $sql  = "INSERT INTO `order` SET ";
-           $sql  .= " `pizzaType` = '".$id."' ,";
-           $sql  .= " `pizzaSize` = '".$id."' ,";
-           $sql  .= " `pizzaQuantity` = '".$id."' ,";
-           $sql  .= " `phoneNumber` = '".$id."' ,";
-           $sql  .= " `Adress` = '".$id."' ,";
-           $sql  .= " `pizzaSouce` = '".$id."' ,";
-           $sql  .= " `user_id` = 100 ";
-           $result = $link->query($sql);
+          $stmt = $link->prepare("INSERT INTO order(user_id) VALUES (?)"); 
+          $stmt->bind_param("i", $id);
+          $stmt->execute();
+          // $sql  = "INSERT INTO `order` SET ";
+         //  $sql  .= " `pizzaType` = '".$id."' ,";
+         //  $sql  .= " `pizzaSize` = '".$id."' ,";
+         //  $sql  .= " `pizzaQuantity` = '".$id."' ,";
+        //   $sql  .= " `phoneNumber` = '".$id."' ,";
+         //  $sql  .= " `Adress` = '".$id."' ,";
+         //  $sql  .= " `pizzaSouce` = '".$id."' ,";
+         //  $sql  .= " `user_id` = 100 ";
+        //   $result = $link->query($sql);
            }
            
            
