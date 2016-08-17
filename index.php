@@ -227,18 +227,10 @@ switch ($message) {
            );
            
            }
-          // $query = "INSERT INTO `upperl_vadik`.` order` (`pizzaType`, `pizzaSize`) VALUES ('hi', 'fgb')";
-         //  $query = "INSERT INTO order (user_id,Adress) VALUES(1,1)";
-         //  $link->prepare($query) or die('Запрос не удался: ' . mysql_error());
-         
-         // $result = $link->prepare("INSERT INTO `order` (user_id,Adress) VALUES(1,1)") or die("Ошибка " . mysqli_error($link)); 
-          $stmt = $link->prepare("INSERT INTO order(user_id) VALUES (1)"); 
-          $stmt->bind_param("i", $id); 
-
-          /* выполнение подготовленного выражения  */ 
-          $stmt->execute(); 
-          /* Закрытие соединения и выражения*/ 
-          $stmt->close();      
+          $sql  = "INSERT INTO `order` SET ";
+          $sql  .= " `user_id` = '".$id."' ,";
+          $sql  .= " `pizzaType` = 100 ";
+          $result = $link->query($sql);     
 }           
            
            
