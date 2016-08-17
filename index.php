@@ -106,14 +106,14 @@ switch ($message) {
            $rowas = $result->fetch_assoc();
            // print_r($rowas);
            //$mystring = 'Generate Insult,Language,Homepage';
-           $flag = false;
+           $flag = "false";
            for($i =  0; $i < count($rowas); $i ++){
             if($rowas[$i] == $id){
-             $flag = true;
+             $flag = "true";
             }
            }
            
-           file_put_contents("errors.txt", $flag);
+           file_put_contents("errors.txt", $rowas);
           // if($flag == true){
                  if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
