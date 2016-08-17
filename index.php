@@ -110,7 +110,9 @@ switch ($message) {
            for($i =  0; $i < count($rowas); $i ++){
             if($rowas[$i] == $id){
              $flag = "true";
+             file_put_contents("errors.txt", $rowas[$i]);
             }
+            
            }
            
            file_put_contents("errors.txt", $rowas);
@@ -118,13 +120,9 @@ switch ($message) {
                  if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
                 }
-
-               /* подготавливаемый запрос, вторая стадия: привязка и выполнение */
-            
                 if (!$stmt->bind_param("i", $id)) {
                  echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
                 }
-
                 if (!$stmt->execute()) {
                 echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
                 }
