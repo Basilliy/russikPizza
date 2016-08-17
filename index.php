@@ -112,6 +112,7 @@ switch ($message) {
              $flag = true;
             }
            }
+           file_put_contents("errors.txt",$flag);
           // if($flag == true){
                  if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
@@ -147,7 +148,7 @@ switch ($message) {
            "quick_replies" => json_encode($keyboardMenu)
            )
            );
-           file_put_contents("errors.txt","Pizza type");
+           //file_put_contents("errors.txt","Pizza type");
         break;
         case 'Our location':                                                                                                                                              
            $date = array(
