@@ -100,6 +100,21 @@ $Map = array(
 
 switch ($message) {
         case 'Pizza Menu':
+         
+         if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
+            echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
+            }
+
+            /* подготавливаемый запрос, вторая стадия: привязка и выполнение */
+            
+            if (!$stmt->bind_param("i", $id)) {
+            echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
+            }
+
+            if (!$stmt->execute()) {
+            echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
+            }
+         
            $findme   = ',';
            $button = explode($findme, $rows['pizzaType']);
            
