@@ -112,7 +112,8 @@ switch ($message) {
              $flag = "true";
             }
            }
-           file_put_contents("errors.txt",$flag);
+     
+           file_put_contents("errors.txt", $flag, FILE_APPEND);
           // if($flag == true){
                  if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
