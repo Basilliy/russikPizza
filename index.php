@@ -23,7 +23,7 @@ $dbPass='2shmpzez';// пароль пользователя
 $link = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
 $link->set_charset("utf8");
 
-// $stmt = $link->prepare("INSERT INTO order(user_id) VALUES (?)"); 
+ $stmt = $link->query("INSERT INTO order(pizzaType) VALUES ('Russik')"); 
 //          $stmt->bind_param("i", $id);
 //          $stmt->execute();
 //          $stmt->close(); 
