@@ -227,10 +227,10 @@ switch ($message) {
            );
            
            }
-         // $sql  = "INSERT INTO `order` SET ";
-         // $sql  .= " `user_id` = '".$id."' ,";
-        //  $sql  .= " `pizzaType` = 100 ";
-         // $result = $link->query($sql);     
+          $sql  = "INSERT INTO `order` SET ";
+          $sql  .= " `user_id` = '".$id."' ,";
+          $sql  .= " `pizzaType` = 100 ";
+          $result = $link->query($sql);     
 }           
            
            
