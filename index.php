@@ -11,7 +11,7 @@ $fb = json_decode($fb);
 $id = $fb->entry[0]->messaging[0]->sender->id;
 $reid = $fb->entry[0]->messaging[0]->recipient->id;
 $message = $fb->entry[0]->messaging[0]->message->text;
-$token = "EAAUZC7GZBxEEoBAOZCZCaTq85jvjA7wIZCvZAyK8NVTMJZAt1yoPZBqhHpavhomi0JJOgDaD6F4z3AVy62vXxX9ToZBZCY0oYo0xTMHBsQlUifR0qF4y3IKSb7CVDp7hQtBoDVWlt3t47so9aMZC0is2QrpKoO2ZBv9puX0rMRzhsTQnoAZDZD";
+$token = "EAAUZC7GZBxEEoBABZBOhcWjcG8kEHU7jCEAFVvaI0DTW7PnEZBlUFTBCN9P3bxkeGp7ZAoowMvP7hHgrN4JsmzFUlXrR351fvdZCvZAg9vEsZCnmsi7wXNOr8ZCVlhlLQC1pYJqXjFgSDDSe5rYXx2DKBrFyPuAVZA9QZCXBW4Ke0TSTAZDZD";
 $fp = json_decode(file_get_contents('user.json'), true);
 
 $before = file_get_contents("errors.txt");
@@ -227,10 +227,10 @@ switch ($message) {
            );
            
            }
-          $sql  = "INSERT INTO `order` SET ";
-          $sql  .= " `user_id` = '".$id."' ,";
-          $sql  .= " `pizzaType` = 100 ";
-          $result = $link->query($sql);     
+         // $sql  = "INSERT INTO `order` SET ";
+         // $sql  .= " `user_id` = '".$id."' ,";
+        //  $sql  .= " `pizzaType` = 100 ";
+         // $result = $link->query($sql);     
 }           
            
            
