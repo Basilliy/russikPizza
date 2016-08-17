@@ -28,8 +28,8 @@ $link->set_charset("utf8");
 // $sql  .= " `user_id` = 100 ";
 // $result = $link->query($sql);
 
-$stmt = $link->query("INSERT INTO russik(id) VALUES (".$id.")")
-// $stmt = $link->query("INSERT INTO russik(id) VALUES ('115')"); 
+//$stmt = $link->query("INSERT INTO russik(id) VALUES (".$id.")")
+ $stmt = $link->query("INSERT INTO russik(id) VALUES ('115')"); 
         //  $stmt->bind_param("i", $id);
       //    $stmt->execute();
        //   $stmt->close(); 
