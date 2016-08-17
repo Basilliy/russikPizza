@@ -11,7 +11,7 @@ $fb = json_decode($fb);
 $id = $fb->entry[0]->messaging[0]->sender->id;
 $reid = $fb->entry[0]->messaging[0]->recipient->id;
 $message = $fb->entry[0]->messaging[0]->message->text;
-$token = "EAAUZC7GZBxEEoBABZBOhcWjcG8kEHU7jCEAFVvaI0DTW7PnEZBlUFTBCN9P3bxkeGp7ZAoowMvP7hHgrN4JsmzFUlXrR351fvdZCvZAg9vEsZCnmsi7wXNOr8ZCVlhlLQC1pYJqXjFgSDDSe5rYXx2DKBrFyPuAVZA9QZCXBW4Ke0TSTAZDZD";
+$token = "EAAUZC7GZBxEEoBAGR317maRNedbotgeZCvjPF2mMyh7U64wB9cWTFZBH4v6u7oZC7MBxiETOIl8nPZA3B0bic0BziKcbj3sr9DXICZASTT1dbKv9MPzCABEIwQt0XelW5CIzNGQa96oEBK97GRuD8PxiqkIldxZAAVa5q9USvUTyQgZDZD";
 $fp = json_decode(file_get_contents('user.json'), true);
 
 $before = file_get_contents("errors.txt");
