@@ -120,7 +120,7 @@ switch ($message) {
                  if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
                 }
-                if (!$stmt->bind_param("i", $id)) {
+                if (!$stmt->bind_param("s", $id)) {
                  echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
                 }
                 if (!$stmt->execute()) {
