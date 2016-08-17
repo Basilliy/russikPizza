@@ -16,12 +16,19 @@ $fp = json_decode(file_get_contents('user.json'), true);
 
 $before = file_get_contents("errors.txt");
 
-$host = 'upperl.mysql.ukraine.com.ua'; // адрес сервера 
-$database = 'upperl_vadik'; // имя базы данных
-$user = 'upperl_vadik'; // имя пользователя
-$password = '2shmpzez'; // пароль
-$link = mysqli_connect($host, $user, $password,$database)
-    or die('Не удалось соединиться: ' . mysql_error());
+$dbHost='upperl.mysql.ukraine.com.ua';// чаще всего это так, но иногда требуется прописать ip адрес базы данных
+$dbName='upperl_vadik';// название вашей базы
+$dbUser='upperl_vadik';// пользователь базы данных
+$dbPass='2shmpzez';// пароль пользователя
+$link = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
+$link->set_charset("utf8");
+
+//$host = 'upperl.mysql.ukraine.com.ua'; // адрес сервера 
+//$database = 'upperl_vadik'; // имя базы данных
+//$user = 'upperl_vadik'; // имя пользователя
+//$password = '2shmpzez'; // пароль
+//$link = mysqli_connect($host, $user, $password,$database)
+//    or die('Не удалось соединиться: ' . mysql_error());
 //echo 'Соединение успешно установлено';
 
 
@@ -227,9 +234,9 @@ switch ($message) {
            );
          //  $query = 'SELECT * FROM pizzaMenu';
          //  $result = $link->query($query) or die('Запрос не удался: ' . mysql_error());
-          $stmt = $link->prepare("INSERT INTO order(user_id) VALUES (?)"); 
-          $stmt->bind_param("i", $id);
-          $stmt->execute();
+        //  $stmt = $link->prepare("INSERT INTO order(user_id) VALUES (?)"); 
+       //   $stmt->bind_param("i", $id);
+       //   $stmt->execute();
           // $sql  = "INSERT INTO `order` SET ";
          //  $sql  .= " `pizzaType` = '".$id."' ,";
          //  $sql  .= " `pizzaSize` = '".$id."' ,";
