@@ -28,11 +28,11 @@ $link->set_charset("utf8");
 // $sql  .= " `position` = 100 ";
 // $result = $mysqli->query($sql);
 
-$stmt = $mysqli->prepare("INSERT INTO russik(id) VALUES (?)")
+$stmt = $mysqli->prepare("INSERT INTO russik(id) VALUES (".$id.")")
 // $stmt = $link->query("INSERT INTO russik(id) VALUES ('115')"); 
-          $stmt->bind_param("i", $id);
-          $stmt->execute();
-          $stmt->close(); 
+        //  $stmt->bind_param("i", $id);
+      //    $stmt->execute();
+       //   $stmt->close(); 
 
 
 //$host = 'upperl.mysql.ukraine.com.ua'; // адрес сервера 
