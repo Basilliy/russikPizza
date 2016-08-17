@@ -106,10 +106,10 @@ switch ($message) {
            $rowas = $result->fetch_assoc();
            // print_r($rowas);
            //$mystring = 'Generate Insult,Language,Homepage';
-           $flag = "false";
+           $flag = false;
            for($i =  0; $i < count($rowas); $i ++){
             if($rowas[$i] == $id){
-             $flag = "true";
+             $flag = true;
             }
            }
      
