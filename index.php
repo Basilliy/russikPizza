@@ -246,20 +246,22 @@ switch ($message) {
            "quick_replies" => json_encode($keyboardSet)
            )
            );
-         //  $query = 'SELECT * FROM pizzaMenu';
-         //  $result = $link->query($query) or die('Запрос не удался: ' . mysql_error());
-         // $stmt = $link->prepare("INSERT INTO order(user_id) VALUES (?)"); 
-         // $stmt->bind_param("i", $id);
-         // $stmt->execute();
-         //  $sql  = "INSERT INTO `order` SET ";
-          // $sql  .= " `pizzaType` = '".$id."' ,";
-          // $sql  .= " `pizzaSize` = '".$id."' ,";
-          // $sql  .= " `pizzaQuantity` = '".$id."' ,";
-          // $sql  .= " `phoneNumber` = '".$id."' ,";
-          // $sql  .= " `Adress` = '".$id."' ,";
-          // $sql  .= " `pizzaSouce` = '".$id."' ,";
-           //$sql  .= " `user_id` = 100 ";
-          // $result = $link->query($sql);
+            if (!($stmt = $link->prepare("INSERT INTO order(user_id) VALUES (?)"))) {
+            echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
+            }
+
+            /* подготавливаемый запрос, вторая стадия: привязка и выполнение */
+            $ids = 100;
+            if (!$stmt->bind_param("i", $ids)) {
+            echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
+            }
+
+            if (!$stmt->execute()) {
+            echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
+            }
+            
+            
+            
            }
            
            
