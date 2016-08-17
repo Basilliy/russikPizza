@@ -112,7 +112,7 @@ switch ($message) {
              $flag = true;
             }
            }
-           if($flag == true){
+          // if($flag == true){
                  if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
                 }
@@ -126,7 +126,7 @@ switch ($message) {
                 if (!$stmt->execute()) {
                 echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
                 }
-            }
+           // }
            $findme   = ',';
            $button = explode($findme, $rows['pizzaType']);
            
