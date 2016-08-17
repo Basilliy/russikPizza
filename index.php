@@ -23,17 +23,19 @@ $dbPass='2shmpzez';// пароль пользователя
 $link = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
 $link->set_charset("utf8");
 
-//$sql  = "INSERT INTO `russik` SET ";
-//$sql  .= " `id` = '".$id."' ,";
-// $sql  .= " `user_id` = 100 ";
-// $result = $link->query($sql);
+if (!($stmt = $link->prepare("INSERT INTO russik(id) VALUES (?)"))) {
+    echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
+}
 
-//$stmt = $link->query("INSERT INTO russik(id) VALUES (".$id.")")
- $stmt = $link->query("INSERT INTO russik(id) VALUES ('115')"); 
-        //  $stmt->bind_param("i", $id);
-      //    $stmt->execute();
-       //   $stmt->close(); 
+/* подготавливаемый запрос, вторая стадия: привязка и выполнение */
+$ids = 100;
+if (!$stmt->bind_param("i", $ids)) {
+    echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
+}
 
+if (!$stmt->execute()) {
+    echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
+}
 
 //$host = 'upperl.mysql.ukraine.com.ua'; // адрес сервера 
 //$database = 'upperl_vadik'; // имя базы данных
