@@ -23,12 +23,12 @@ $dbPass='2shmpzez';// пароль пользователя
 $link = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
 $link->set_charset("utf8");
 
-//$sql  = "INSERT INTO `usersport` SET ";
-//$sql  .= " `id` = '".$id."' ,";
-// $sql  .= " `position` = 100 ";
-// $result = $mysqli->query($sql);
+$sql  = "INSERT INTO `russik` SET ";
+$sql  .= " `id` = '".$id."' ,";
+ $sql  .= " `user_id` = 100 ";
+ $result = $link->query($sql);
 
-$stmt = $mysqli->query("INSERT INTO russik(id) VALUES (".$id.")")
+//$stmt = $mysqli->query("INSERT INTO russik(id) VALUES (".$id.")")
 // $stmt = $link->query("INSERT INTO russik(id) VALUES ('115')"); 
         //  $stmt->bind_param("i", $id);
       //    $stmt->execute();
