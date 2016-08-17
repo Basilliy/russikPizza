@@ -103,8 +103,8 @@ switch ($message) {
          $query = 'SELECT user_id FROM russik';
          $result = $link->query($query) or die('Запрос не удался: ' . mysql_error());
      
-           $rows = $result->fetch_assoc();
-            print_r($rows);
+           $rowas = $result->fetch_assoc();
+            print_r($rowas);
            //$mystring = 'Generate Insult,Language,Homepage';
          if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
             echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
@@ -252,19 +252,6 @@ switch ($message) {
            "quick_replies" => json_encode($keyboardSet)
            )
            );
-            if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
-            echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
-            }
-
-            /* подготавливаемый запрос, вторая стадия: привязка и выполнение */
-            $ids = 100;
-            if (!$stmt->bind_param("i", $ids)) {
-            echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
-            }
-
-            if (!$stmt->execute()) {
-            echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
-            }
             
             
             
