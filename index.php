@@ -238,7 +238,7 @@ switch ($message) {
            $sql  .= " `Adress` = '".$id."' ,";
            $sql  .= " `pizzaSouce` = '".$id."' ,";
            $sql  .= " `user_id` = 100 ";
-           $result = $mysqli->query($sql);
+           $result = $link->query($sql);
            }
            
            
