@@ -225,11 +225,15 @@ switch ($message) {
            "quick_replies" => json_encode($keyboardSet)
            )
            );
-           
-           }
+         //  $query = 'SELECT * FROM pizzaMenu';
+         //  $result = $link->query($query) or die('Запрос не удался: ' . mysql_error());
           $stmt = $link->prepare("INSERT INTO order(user_id) VALUES (?)"); 
           $stmt->bind_param("i", $id);
-          $stmt->execute(); 
+          $stmt->execute();
+           }
+           
+           
+          
 }           
            
            
