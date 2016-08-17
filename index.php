@@ -112,7 +112,7 @@ switch ($message) {
              $flag = "true";
              
             }
-            file_put_contents("errors.txt", $rowas[4].$id);
+            file_put_contents("errors.txt", $rowas[4]."   ".$id);
            }
            
           // file_put_contents("errors.txt", $rowas);
