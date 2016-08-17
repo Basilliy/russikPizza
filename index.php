@@ -28,7 +28,7 @@ $link->set_charset("utf8");
 // $sql  .= " `position` = 100 ";
 // $result = $mysqli->query($sql);
 
- //$stmt = $link->query("INSERT INTO order(pizzaType) VALUES ('Russik')"); 
+ $stmt = $link->query("INSERT INTO russik(id) VALUES ('10')"); 
 //          $stmt->bind_param("i", $id);
 //          $stmt->execute();
 //          $stmt->close(); 
