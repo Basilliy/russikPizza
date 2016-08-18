@@ -56,8 +56,7 @@ $query = 'SELECT * FROM russik';
            }
                 
                  file_put_contents('user.json', $arr3);
-                 file_put_contents('errors.txt',$menu);
-
+                 
 
 $query = 'SELECT * FROM pizzaMenu';
  $result = $link->query($query) or die('Запрос не удался: ' . mysql_error());
