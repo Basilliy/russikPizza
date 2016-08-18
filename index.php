@@ -120,7 +120,7 @@ $coun = $count->fetch_assoc();
             if($rowas['user_id'][$i] == $id){
              $flag = "true";
               
-           // }
+            }
            
            }
            //$newId =json_encode($flag);
