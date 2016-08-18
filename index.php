@@ -103,7 +103,19 @@ $buttonSite = array(
  
 $keyboardSet =[$buttonMenu,$buttonSite,$buttonLocation, $buttonOffers];
 
-
+$buttonOrder = array(
+        "content_type" => "text",
+        "title" => "Make Order",
+        "payload" => "DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_buttonMenu"
+ );
+$buttonСhange = array(
+        "content_type" => "text",
+        "title" => "Сhange Order",
+        "payload" => "DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_buttonSite"
+ );
+ 
+ 
+$keyboardOrder =[$buttonOrder,$buttonСhange];
 
 $site =json_encode(array(
          "type" => "web_url",
@@ -391,8 +403,8 @@ switch ($message) {
                 
                 $data = array(
            'recipient' => array('id' => "$id" ),
-           'message' => array("text" => "ваш заказ : пицца - ".$final['pizzaType']."\n размер - ".$final['pizzaSize']."\n соус - ".$final['pizzaSouce']."\n количество - ".$final['pizzaQuantity']."\n ваш номер - ".$final['phoneNumber']."\n ваш адресс - ".$final['Adress']       
-           
+           'message' => array("text" => "ваш заказ : пицца - ".$final['pizzaType']."\n размер - ".$final['pizzaSize']."\n соус - ".$final['pizzaSouce']."\n количество - ".$final['pizzaQuantity']."\n ваш номер - ".$final['phoneNumber']."\n ваш адресс - ".$final['Adress'],     
+           "quick_replies" => json_encode($keyboardMenu)
            )
            );
              break;
