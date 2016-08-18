@@ -124,12 +124,7 @@ $coun = $count->fetch_assoc();
            
            
            }
-           $mass = $rowas['user_id'];
-           $arr3 = json_encode($mass);
-           //file_put_contents('user.json',$arr3);
-           //$newId =json_encode($flag);
-           //file_put_contents("errors.txt",$flag);
-          // file_put_contents("errors.txt", $rowas);
+          
            if($flag == "false"){
                  if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
@@ -335,7 +330,11 @@ $coun = $count->fetch_assoc();
                 $order = $link->query($query) or die('Запрос не удался: ' . mysql_error());
                 // print_r($result);
                 $menu = $order->fetch_assoc();
-                
+                // $mass = $rowas['user_id'];
+                //$arr3 = json_encode($mass);
+                 file_put_contents('user.json',$menu);
+           
+          
                // for($i=0; $i < $coun['COUNT(1)']; $i++){
                  //$newId = (string)$mass[$i];
                 //if($rowas['user_id'] == $id){
