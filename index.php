@@ -48,7 +48,7 @@ $coun = $count->fetch_assoc();
             //$newId = (string)$mass[$i];
             if($menu['user_id'] == $id){
              $final = $menu;
-             file_put_contents('errors.txt',$final[0]);
+             file_put_contents('errors.txt',$final);
             }
              //    $mass[$i] = $menu['user_id'];
               //   $arr3 = json_encode($mass);
