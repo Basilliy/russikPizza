@@ -100,23 +100,23 @@ $Map = array(
 
 switch ($message) {
         case 'Pizza Menu':
-         $query = 'SELECT user_id FROM russik';
+         $query = 'SELECT * FROM russik';
          $results = $link->query($query) or die('Запрос не удался: ' . mysql_error());
      
            $rowas = $results->fetch_assoc();
            // print_r($rowas);
            //$mystring = 'Generate Insult,Language,Homepage';
            $flag = "false";
-           $mass =  $rowas['user_id'];
-           for($i =  0; $i < count($mass); $i ++){
-            $newId = (string)$mass[$i];
-            if($newId == $id){
-             $flag = "true";
+           $mass =  $rowas;
+           for($i =  0; $i < count($rowas); $i ++){
+            //$newId = (string)$mass[$i];
+            //if($newId == $id){
+            // $flag = "true";
               
-            }
+            //}
            
            }
-           $newId =json_encode($mass[0]);
+           $newId =json_encode($rowas);
            file_put_contents("errors.txt",$newId);
           // file_put_contents("errors.txt", $rowas);
           // if($flag == true){
