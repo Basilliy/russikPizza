@@ -47,7 +47,8 @@ $coun = $count->fetch_assoc();
                 for($i=0; $i < $coun['COUNT(1)']; $i++){
             //$newId = (string)$mass[$i];
             if($menu['user_id'] == $id){
-             $final = $menu;
+                       
+             $final = $menu['user_id'];
              file_put_contents('errors.txt',$final);
             }
              //    $mass[$i] = $menu['user_id'];
