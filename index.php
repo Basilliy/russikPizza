@@ -100,7 +100,7 @@ $Map = array(
 
 switch ($message) {
         case 'Pizza Menu':
-         $query = 'select * from russik where';
+         $query = 'SELECT * FROM russik';
          $results = $link->query($query) or die('Запрос не удался: ' . mysql_error());
      
            $rowas = $results->fetch_assoc();
@@ -121,7 +121,7 @@ switch ($message) {
            
            //}
            //$newId =json_encode($flag);
-           file_put_contents("errors.txt",$rowas);
+           //file_put_contents("errors.txt",$rowas);
           // file_put_contents("errors.txt", $rowas);
           // if($flag == true){
                  if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
