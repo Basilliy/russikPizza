@@ -108,9 +108,10 @@ switch ($message) {
            //$mystring = 'Generate Insult,Language,Homepage';
            $flag = "false";
            for($i =  0; $i < count($rowas); $i ++){
-            if($rowas[$i] == $id){
+            $newId = (int) $rowas[$i];
+            if($newId == $id){
              $flag = "true";
-              file_put_contents("errors.txt",$flag);
+              file_put_contents("errors.txt",$newId);
             }
            
            }
