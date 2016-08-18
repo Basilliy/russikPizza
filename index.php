@@ -244,6 +244,15 @@ $coun = $count->fetch_assoc();
            )
            );
            file_put_contents("errors.txt","Souce");
+           if (!($stmt = $link->prepare("UPDATE russik SET pizzaSize = ? WHERE user_id = ?"))) {
+               echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
+                }
+                if (!$stmt->bind_param("si",$message,$id)) {
+                 echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
+                }
+                if (!$stmt->execute()) {
+                echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
+                }
              break;  
                
              case 'Souce':                                                                                                                                              
@@ -256,7 +265,7 @@ $coun = $count->fetch_assoc();
            file_put_contents("errors.txt","Quantity");
            
            
-           if (!($stmt = $link->prepare("UPDATE russik SET pizzaSize = ? WHERE user_id = ?"))) {
+           if (!($stmt = $link->prepare("UPDATE russik SET 	pizzaSouce = ? WHERE user_id = ?"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
                 }
                 if (!$stmt->bind_param("si",$message,$id)) {
@@ -281,7 +290,7 @@ $coun = $count->fetch_assoc();
            if (!($stmt = $link->prepare("UPDATE russik SET pizzaQuantity = ? WHERE user_id = ?"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
                 }
-                if (!$stmt->bind_param("шi",$message,$id)) {
+                if (!$stmt->bind_param("ii",$message,$id)) {
                  echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
                 }
                 if (!$stmt->execute()) {
@@ -298,6 +307,15 @@ $coun = $count->fetch_assoc();
            )
            );
            file_put_contents("errors.txt","Adress");
+           if (!($stmt = $link->prepare("UPDATE russik SET phoneNumber = ? WHERE user_id = ?"))) {
+               echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
+                }
+                if (!$stmt->bind_param("ii",$message,$id)) {
+                 echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
+                }
+                if (!$stmt->execute()) {
+                echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
+                }
              break;    
                
             default:   
