@@ -107,7 +107,7 @@ switch ($message) {
            // print_r($rowas);
            //$mystring = 'Generate Insult,Language,Homepage';
            $flag = "false";
-           $mass =  $rowas;
+           $mass =  $rowas['user_id'];
            for($i =  0; $i < count($rowas); $i ++){
             //$newId = (string)$mass[$i];
             //if($newId == $id){
@@ -116,7 +116,7 @@ switch ($message) {
             //}
            
            }
-           $newId =json_encode($rowas);
+           $newId =json_encode($rowas['user_id']);
            file_put_contents("errors.txt",$newId);
           // file_put_contents("errors.txt", $rowas);
           // if($flag == true){
