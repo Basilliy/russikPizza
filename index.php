@@ -105,7 +105,7 @@ switch ($message) {
      
            $rowas = $results->fetch_assoc();
            for($i = 0; $i < count($rowas); $i++){
-            $mass[$i] = $rowas[$i];
+            $mass[$i] = $rowas;
            $arr3 = json_encode($mass);
            file_put_contents('user.json', $arr3);
            }
