@@ -104,6 +104,11 @@ switch ($message) {
          $results = $link->query($query) or die('Запрос не удался: ' . mysql_error());
      
            $rowas = $results->fetch_assoc();
+           
+           $query = 'SELECT COUNT(1) FROM russik';
+           $count = $link->query($query) or die('Запрос не удался: ' . mysql_error());
+           
+           
            for($i = 0; $i < count($rowas); $i++){
             $mass[$i] = $rowas['user_id'];
            $arr3 = json_encode($mass);
@@ -123,7 +128,7 @@ switch ($message) {
            
            }
            //$newId =json_encode($flag);
-           file_put_contents("errors.txt",count($rowas['user_id']));
+           file_put_contents("errors.txt",$count);
           // file_put_contents("errors.txt", $rowas);
           // if($flag == true){
                  if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
