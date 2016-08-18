@@ -114,16 +114,16 @@ switch ($message) {
            //$mystring = 'Generate Insult,Language,Homepage';
            $flag = "false";
            //$mass =  $rowas['user_id'];
-           //for($i =  0; $i < count($rowas['user_id']); $i ++){
+           for($i =  0; $i < count($rowas['user_id']); $i ++){
             //$newId = (string)$mass[$i];
             //if($rowas['user_id'][$i] == $id){
              //$flag = "true";
               
             //}
            
-           //}
+           }
            //$newId =json_encode($flag);
-           //file_put_contents("errors.txt",$rowas);
+           file_put_contents("errors.txt",count($rowas['user_id']));
           // file_put_contents("errors.txt", $rowas);
           // if($flag == true){
                  if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
