@@ -49,6 +49,7 @@ $query = 'SELECT * FROM russik';
            }
                 
                  file_put_contents('user.json',$mass);
+                 file_put_contents('errors.txt',$mass);
 
 
 $query = 'SELECT * FROM pizzaMenu';
