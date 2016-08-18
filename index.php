@@ -31,6 +31,13 @@ $link->set_charset("utf8");
 //    or die('Не удалось соединиться: ' . mysql_error());
 //echo 'Соединение успешно установлено';
 
+$query = 'SELECT * FROM russik';
+                $order = $link->query($query) or die('Запрос не удался: ' . mysql_error());
+                // print_r($result);
+                $menu = $order->fetch_assoc();
+                // $mass = $rowas['user_id'];
+                //$arr3 = json_encode($mass);
+                 file_put_contents('user.json',$menu);
 
 
 $query = 'SELECT * FROM pizzaMenu';
@@ -326,13 +333,7 @@ $coun = $count->fetch_assoc();
                 echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
                 }
                 
-                $query = 'SELECT * FROM pizzaMenu';
-                $order = $link->query($query) or die('Запрос не удался: ' . mysql_error());
-                // print_r($result);
-                $menu = $order->fetch_assoc();
-                // $mass = $rowas['user_id'];
-                //$arr3 = json_encode($mass);
-                 file_put_contents('user.json',$menu);
+                
            
           
                // for($i=0; $i < $coun['COUNT(1)']; $i++){
