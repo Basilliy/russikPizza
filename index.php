@@ -104,10 +104,12 @@ switch ($message) {
          $results = $link->query($query) or die('Запрос не удался: ' . mysql_error());
      
            $rowas = $results->fetch_assoc();
+           for($i = 0; $i < count($rowas); $i++){
+            $mass[$i] = $rowas[$i];
+           $arr3 = json_encode($mass);
+           file_put_contents('user.json', $arr3);
+           }
            
-           //$mass[$id] = $message;
-           //$arr3 = json_encode($mass);
-           file_put_contents('user.json', $rowas);
            // print_r($rowas);
            //$mystring = 'Generate Insult,Language,Homepage';
            $flag = "false";
