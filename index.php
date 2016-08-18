@@ -44,8 +44,8 @@ $query = 'SELECT * FROM russik';
             // $flag = "true";
               
            // }
-                 //$mass = $rowas['user_id'];
-                 $arr3 = json_encode($menu);
+                 $mass[$i] = $menu;
+                 $arr3 = json_encode($mass);
            }
                 
                  file_put_contents('user.json',$arr3);
