@@ -47,7 +47,7 @@ $query = 'SELECT * FROM russik';
                 for($i=0; $i < $coun['COUNT(1)']; $i++){
             //$newId = (string)$mass[$i];
             if($menu['user_id'] == $id){
-             $flag = "true";
+             $flag = "true russ";
              file_put_contents('errors.txt',$flag);
               
             }
