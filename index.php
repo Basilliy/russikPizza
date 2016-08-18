@@ -121,12 +121,15 @@ $coun = $count->fetch_assoc();
              $flag = "true";
               
             }
+           $mass[$i] = $rowas['user_id'][$i];
+           $arr3 = json_encode($mass);
            
            }
+           file_put_contents('user.json', $arr3);
            //$newId =json_encode($flag);
            file_put_contents("errors.txt",$flag);
           // file_put_contents("errors.txt", $rowas);
-          // if($flag == true){
+           if($flag == true){
                  if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
                 }
@@ -136,7 +139,7 @@ $coun = $count->fetch_assoc();
                 if (!$stmt->execute()) {
                 echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
                 }
-           // }
+            }
            $findme   = ',';
            $button = explode($findme, $rows['pizzaType']);
            
