@@ -108,6 +108,7 @@ switch ($message) {
            $query = 'SELECT COUNT(1) FROM russik';
            $count = $link->query($query) or die('Запрос не удался: ' . mysql_error());
            
+           $coun = $count->fetch_assoc();
            
            for($i = 0; $i < count($rowas); $i++){
             $mass[$i] = $rowas['user_id'];
@@ -128,7 +129,7 @@ switch ($message) {
            
            }
            //$newId =json_encode($flag);
-           file_put_contents("errors.txt",$count);
+           file_put_contents("errors.txt",$coun);
           // file_put_contents("errors.txt", $rowas);
           // if($flag == true){
                  if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
