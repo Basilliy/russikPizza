@@ -54,7 +54,7 @@ $query = 'SELECT * FROM russik';
                  $arr3 = json_encode($mass);
            }
                 
-                 file_put_contents('user.json', $mass);
+                 file_put_contents('user.json', $arr3);
                  file_put_contents('errors.txt',$menu);
 
 
