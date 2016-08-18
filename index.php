@@ -121,12 +121,12 @@ $coun = $count->fetch_assoc();
              $flag = "true";
               
             }
-           $mass[$i] = $rowas['user_id'][$i];
+           $mass[$i] = $rowas['user_id'];
            $arr3 = json_encode($mass);
            
            }
            
-           file_put_contents('user.json', $arr3);
+           file_put_contents('user.json', $rowas;
            //$newId =json_encode($flag);
            file_put_contents("errors.txt",$flag);
           // file_put_contents("errors.txt", $rowas);
