@@ -100,10 +100,14 @@ $Map = array(
 
 switch ($message) {
         case 'Pizza Menu':
-         $query = 'select key from `russik` where `user_id` like "%$id%"';
+         $query = 'select * from russik where';
          $results = $link->query($query) or die('Запрос не удался: ' . mysql_error());
      
            $rowas = $results->fetch_assoc();
+           
+           //$mass[$id] = $message;
+           //$arr3 = json_encode($mass);
+           file_put_contents('user.json', $rowas);
            // print_r($rowas);
            //$mystring = 'Generate Insult,Language,Homepage';
            $flag = "false";
