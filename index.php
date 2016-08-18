@@ -126,9 +126,9 @@ $coun = $count->fetch_assoc();
            }
            $mass = $rowas['user_id'];
            $arr3 = json_encode($mass);
-           file_put_contents('user.json',$arr3);
+           //file_put_contents('user.json',$arr3);
            //$newId =json_encode($flag);
-           file_put_contents("errors.txt",$flag);
+           //file_put_contents("errors.txt",$flag);
           // file_put_contents("errors.txt", $rowas);
            if($flag == "false"){
                  if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
@@ -161,7 +161,7 @@ $coun = $count->fetch_assoc();
            "quick_replies" => json_encode($keyboardMenu)
            )
            );
-           //file_put_contents("errors.txt","Pizza type");
+           file_put_contents("errors.txt","Pizza type");
         break;
         case 'Our location':                                                                                                                                              
            $date = array(
