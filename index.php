@@ -121,7 +121,7 @@ $coun = $count->fetch_assoc();
              $flag = "true";
               
             }
-           $mass[$i] = $rowas['user_id'];
+           $mass[$i] = $rowas['user_id'][$i];
            $arr3 = json_encode($mass);
            
            }
