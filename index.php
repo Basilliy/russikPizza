@@ -40,12 +40,12 @@ $query = 'SELECT * FROM russik';
                 
                 for($i=0; $i < $coun['COUNT(1)']; $i++){
             //$newId = (string)$mass[$i];
-            if($rowas['user_id'] == $id){
-             $flag = "true";
+            //if($rowas['user_id'] == $id){
+            // $flag = "true";
               
-            }
+           // }
                  //$mass = $rowas['user_id'];
-                 $arr3 = json_encode($rowas);
+                 $arr3 = json_encode($menu);
            }
                 
                  file_put_contents('user.json',$arr3);
