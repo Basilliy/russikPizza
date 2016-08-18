@@ -373,7 +373,7 @@ switch ($message) {
                 
                 $data = array(
            'recipient' => array('id' => "$id" ),
-           'message' => array("text" => "$menu",
+           'message' => array("text" => "ваш закказ",
            
            )
            );
