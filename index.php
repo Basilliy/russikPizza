@@ -209,7 +209,7 @@ $coun = $count->fetch_assoc();
            )
            );
            file_put_contents("errors.txt","Size");
-           UPDATE movies SET filmName = ?
+           
            if (!($stmt = $link->prepare("UPDATE russik SET pizzaType = ? WHERE user_id = ?))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
                 }
