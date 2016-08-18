@@ -391,7 +391,7 @@ switch ($message) {
                 
                 $data = array(
            'recipient' => array('id' => "$id" ),
-           'message' => array("text" => "ваш заказ : пицца - ".$final[1]."\n размер - ".$final[2]."\n соус - ".$final[6]."\n количество - ".$final[3]."\n ваш номер - ".$final[4]."\n ваш адресс - ".$final[5],        
+           'message' => array("text" => "ваш заказ : пицца - ".$final['pizzaType']."\n размер - ".$final['pizzaSize']."\n соус - ".$final['pizzaSouce']."\n количество - ".$final['pizzaQuantity']."\n ваш номер - ".$final['phoneNumber']."\n ваш адресс - ".$final['Adress']       
            
            )
            );
