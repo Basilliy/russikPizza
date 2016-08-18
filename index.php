@@ -166,7 +166,7 @@ switch ($message) {
            $data = array(
            'recipient' => array('id' => "$id" ),
            'message' => array("text" => "Функция в разработке",
-            "quick_replies" => json_encode($keyboardMenu)
+            "quick_replies" => json_encode($keyboardSet)
            )
            );
 
@@ -229,12 +229,13 @@ switch ($message) {
            file_put_contents("errors.txt","Pizza type");
         break;
         case 'Our location':                                                                                                                                              
-           $date = array(
+           $data = array(
            'recipient' => array('id' => "$id" ),
-           'message' => array(
-                      "attachment" =>$Map 
-                              )
+           'message' => array("text" => "Функция в разработке",
+           "quick_replies" => json_encode($keyboardSet)
+           )
            );
+           
         break;
         case 'Visit our site':                                                                                                                                              
            $data = array(
@@ -249,6 +250,15 @@ switch ($message) {
                       "attachment" =>$URL
                               )
            );
+        break;
+        case 'Top offers':                                                                                                                                              
+           $data = array(
+           'recipient' => array('id' => "$id" ),
+           'message' => array("text" => "Функция в разработке",
+           "quick_replies" => json_encode($keyboardSet)
+            )
+           );
+           
         break;
           default:
            switch($before){
