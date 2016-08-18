@@ -116,7 +116,8 @@ switch ($message) {
             }
            
            }
-           file_put_contents("errors.txt",$rowas[1]);
+           $newId = $mass[1];
+           file_put_contents("errors.txt",$newId);
           // file_put_contents("errors.txt", $rowas);
           // if($flag == true){
                  if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
