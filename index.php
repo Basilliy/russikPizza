@@ -46,10 +46,11 @@ $query = 'SELECT * FROM russik';
                 
                 for($i=0; $i < $coun['COUNT(1)']; $i++){
             //$newId = (string)$mass[$i];
-            //if($rowas['user_id'] == $id){
-            // $flag = "true";
+            if($menu['user_id'] == $id){
+             $flag = "true";
+             file_put_contents('errors.txt',$flag);
               
-           // }
+            }
                  $mass[$i] = $menu['user_id'];
                  $arr3 = json_encode($mass);
            }
