@@ -37,7 +37,18 @@ $query = 'SELECT * FROM russik';
                 $menu = $order->fetch_assoc();
                 // $mass = $rowas['user_id'];
                 //$arr3 = json_encode($mass);
-                 file_put_contents('user.json',$menu);
+                
+                for($i=0; $i < $coun['COUNT(1)']; $i++){
+            //$newId = (string)$mass[$i];
+            if($rowas['user_id'] == $id){
+             $flag = "true";
+              
+            }
+                 //$mass = $rowas['user_id'];
+                 $arr3 = json_encode($rowas);
+           }
+                
+                 file_put_contents('user.json',$arr3);
 
 
 $query = 'SELECT * FROM pizzaMenu';
