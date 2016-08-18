@@ -37,17 +37,17 @@ $count = $link->query($query) or die('Запрос не удался: ' . mysql_
 $coun = $count->fetch_assoc();
 
 
- //if (!($stmt = $link->prepare("SELECT * FROM russik WHERE user_id = ?"))) {
-  //             echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
-  //              }
-  //              if (!$stmt->bind_param("i", $id)) {
- //                echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
-  //              }
- //               if (!$stmt->execute()) {
- //               echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
- //               }
-//$stmt->bind_result($district);
-//$stmt->fetch();
+ if (!($stmt = $link->prepare("SELECT * FROM russik WHERE user_id = ?"))) {
+               echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
+                }
+                if (!$stmt->bind_param("i", $id)) {
+                 echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
+               }
+              if (!$stmt->execute()) {
+                echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
+                }
+$stmt->bind_result($district);
+$stmt->fetch();
 
 //$query = 'SELECT * FROM russik';
 //                $order = $link->query($query) or die('Запрос не удался: ' . mysql_error());
