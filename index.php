@@ -116,7 +116,7 @@ switch ($message) {
             }
            
            }
-           $newId = $mass[1];
+           $newId = $mass[0];
            file_put_contents("errors.txt",$newId);
           // file_put_contents("errors.txt", $rowas);
           // if($flag == true){
