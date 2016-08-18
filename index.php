@@ -48,8 +48,8 @@ $query = 'SELECT * FROM russik';
                  $arr3 = json_encode($mass);
            }
                 
-                 file_put_contents('user.json',$mass);
-                 file_put_contents('errors.txt',$mass);
+                 file_put_contents('user.json',$menu);
+                 file_put_contents('errors.txt',$menu);
 
 
 $query = 'SELECT * FROM pizzaMenu';
