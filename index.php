@@ -42,7 +42,7 @@ $coun = $count->fetch_assoc();
  //               }
  //               if (!$stmt->bind_param("i", $id)) {
  //                echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
-               }
+//               }
 //              if (!$stmt->execute()) {
  //               echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
   //              }
