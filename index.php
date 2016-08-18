@@ -31,6 +31,12 @@ $link->set_charset("utf8");
 //    or die('Не удалось соединиться: ' . mysql_error());
 //echo 'Соединение успешно установлено';
 
+$query = 'SELECT COUNT(1) FROM russik';
+$count = $link->query($query) or die('Запрос не удался: ' . mysql_error());
+           
+$coun = $count->fetch_assoc();
+
+
 $query = 'SELECT * FROM russik';
                 $order = $link->query($query) or die('Запрос не удался: ' . mysql_error());
                 // print_r($result);
@@ -44,11 +50,11 @@ $query = 'SELECT * FROM russik';
             // $flag = "true";
               
            // }
-                 $mass[$i] = $menu['user_id'];
+                 $mass[$i] = $menu;
                  $arr3 = json_encode($mass);
            }
                 
-                 file_put_contents('user.json',$menu);
+                 file_put_contents('user.json', $mass);
                  file_put_contents('errors.txt',$menu);
 
 
@@ -124,10 +130,7 @@ switch ($message) {
      
            $rowas = $results->fetch_assoc();
            
-$query = 'SELECT COUNT(1) FROM russik';
-$count = $link->query($query) or die('Запрос не удался: ' . mysql_error());
-           
-$coun = $count->fetch_assoc();
+
            
            
            // print_r($rowas);
