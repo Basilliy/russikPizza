@@ -115,7 +115,7 @@ $coun = $count->fetch_assoc();
            //$mystring = 'Generate Insult,Language,Homepage';
            $flag = "false";
            //$mass =  $rowas['user_id'];
-           for($i=0; $i < $coun[0]; $i++){
+           for($i=0; $i < $coun['COUNT(1)']; $i++){
             //$newId = (string)$mass[$i];
             if($rowas['user_id'][$i] == $id){
              $flag = "true";
@@ -125,7 +125,7 @@ $coun = $count->fetch_assoc();
            $arr3 = json_encode($mass);
            
            }
-           $arr3 = json_encode($coun);
+           
            file_put_contents('user.json', $arr3);
            //$newId =json_encode($flag);
            file_put_contents("errors.txt",$coun);
