@@ -49,24 +49,24 @@ $coun = $count->fetch_assoc();
 //$stmt->bind_result($district);
 //$stmt->fetch();
 
-//$query = 'SELECT * FROM russik';
-//                $order = $link->query($query) or die('Запрос не удался: ' . mysql_error());
+$query = 'SELECT * FROM russik';
+                $order = $link->query($query) or die('Запрос не удался: ' . mysql_error());
                // print_r($result);
-//                $menu = $order->fetch_assoc();
+               $menu = $order->fetch_assoc();
                 // $mass = $rowas['user_id'];
                 //$arr3 = json_encode($mass);
                 
-//                for($i=0; $i < $coun['COUNT(1)']; $i++){
+                for($i=0; $i < $coun['COUNT(1)']; $i++){
             //$newId = (string)$mass[$i];
-//            if($menu['user_id'] == $id){
-//             $flag = "true russ";
-//             file_put_contents('errors.txt',$flag);
-//            }
-//                 $mass[$i] = $menu['user_id'];
-//                 $arr3 = json_encode($mass);
-//           }
+            if($menu['user_id'] == $id){
+             $final = $menu;
+             file_put_contents('errors.txt',$final);
+            }
+                 $mass[$i] = $menu['user_id'];
+                 $arr3 = json_encode($mass);
+           }
                 
-//                 file_put_contents('user.json', $district);
+                 file_put_contents('user.json', $arr3);
                  
 
 $query = 'SELECT * FROM pizzaMenu';
