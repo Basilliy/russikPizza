@@ -37,23 +37,33 @@ $count = $link->query($query) or die('Запрос не удался: ' . mysql_
 $coun = $count->fetch_assoc();
 
 
-$query = 'SELECT * FROM russik';
-                $order = $link->query($query) or die('Запрос не удался: ' . mysql_error());
-                // print_r($result);
-                $menu = $order->fetch_assoc();
+ if (!($stmt = $link->prepare("SELECT * FROM russik WHERE user_id = ?"))) {
+               echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
+                }
+                if (!$stmt->bind_param("i", $id)) {
+                 echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
+                }
+                if (!$stmt->execute()) {
+                echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
+                }
+$arr3 = $stmt->execute();
+
+//$query = 'SELECT * FROM russik';
+//                $order = $link->query($query) or die('Запрос не удался: ' . mysql_error());
+               // print_r($result);
+//                $menu = $order->fetch_assoc();
                 // $mass = $rowas['user_id'];
                 //$arr3 = json_encode($mass);
                 
-                for($i=0; $i < $coun['COUNT(1)']; $i++){
+//                for($i=0; $i < $coun['COUNT(1)']; $i++){
             //$newId = (string)$mass[$i];
-            if($menu['user_id'] == $id){
-             $flag = "true russ";
-             file_put_contents('errors.txt',$flag);
-              
-            }
-                 $mass[$i] = $menu['user_id'];
-                 $arr3 = json_encode($mass);
-           }
+//            if($menu['user_id'] == $id){
+//             $flag = "true russ";
+//             file_put_contents('errors.txt',$flag);
+//            }
+//                 $mass[$i] = $menu['user_id'];
+//                 $arr3 = json_encode($mass);
+//           }
                 
                  file_put_contents('user.json', $arr3);
                  
