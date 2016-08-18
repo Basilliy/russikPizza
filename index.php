@@ -404,7 +404,7 @@ switch ($message) {
                 $data = array(
            'recipient' => array('id' => "$id" ),
            'message' => array("text" => "ваш заказ : пицца - ".$final['pizzaType']."\n размер - ".$final['pizzaSize']."\n соус - ".$final['pizzaSouce']."\n количество - ".$final['pizzaQuantity']."\n ваш номер - ".$final['phoneNumber']."\n ваш адресс - ".$final['Adress'],     
-           "quick_replies" => json_encode($keyboardMenu)
+           "quick_replies" => json_encode($keyboardOrder)
            )
            );
              break;
