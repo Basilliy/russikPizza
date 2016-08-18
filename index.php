@@ -40,10 +40,7 @@ $query = 'SELECT * FROM pizzaMenu';
 //print_r($rows['pizzaType']);
            //$mystring = 'Generate Insult,Language,Homepage';
 
-$query = 'SELECT COUNT(1) FROM russik';
-$count = $link->query($query) or die('Запрос не удался: ' . mysql_error());
-           
-$coun = $count->fetch_assoc();
+
 
 $buttonMenu = array(
         "content_type" => "text",
@@ -108,11 +105,17 @@ switch ($message) {
      
            $rowas = $results->fetch_assoc();
            
+$query = 'SELECT COUNT(1) FROM russik';
+$count = $link->query($query) or die('Запрос не удался: ' . mysql_error());
+           
+$coun = $count->fetch_assoc();
+           
+           
            // print_r($rowas);
            //$mystring = 'Generate Insult,Language,Homepage';
            $flag = "false";
            //$mass =  $rowas['user_id'];
-           for($i =  0; $i < $coun; $i ++){
+           for($i=0; $i < $coun; $i++){
             //$newId = (string)$mass[$i];
             if($rowas['user_id'][$i] == $id){
              $flag = "true";
