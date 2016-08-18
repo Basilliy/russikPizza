@@ -130,7 +130,7 @@ $coun = $count->fetch_assoc();
            //$newId =json_encode($flag);
            file_put_contents("errors.txt",$flag);
           // file_put_contents("errors.txt", $rowas);
-           if($flag == "true"){
+           if($flag == "false"){
                  if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
                 }
