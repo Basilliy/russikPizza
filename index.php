@@ -47,6 +47,7 @@ $coun = $count->fetch_assoc();
                 echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
                 }
 $stmt->bind_result($district);
+$stmt->fetch();
 
 //$query = 'SELECT * FROM russik';
 //                $order = $link->query($query) or die('Запрос не удался: ' . mysql_error());
