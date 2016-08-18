@@ -100,7 +100,7 @@ $Map = array(
 
 switch ($message) {
         case 'Pizza Menu':
-         $query = 'SELECT * FROM russik';
+         $query = 'SELECT user_id FROM russik';
          $results = $link->query($query) or die('Запрос не удался: ' . mysql_error());
      
            $rowas = $results->fetch_assoc();
