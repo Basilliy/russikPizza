@@ -46,7 +46,7 @@ $coun = $count->fetch_assoc();
                 if (!$stmt->execute()) {
                 echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
                 }
-$arr3 = $stmt->execute();
+$stmt->bind_result($district);
 
 //$query = 'SELECT * FROM russik';
 //                $order = $link->query($query) or die('Запрос не удался: ' . mysql_error());
@@ -65,7 +65,7 @@ $arr3 = $stmt->execute();
 //                 $arr3 = json_encode($mass);
 //           }
                 
-                 file_put_contents('user.json', $arr3);
+                 file_put_contents('user.json', $district);
                  
 
 $query = 'SELECT * FROM pizzaMenu';
