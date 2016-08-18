@@ -363,16 +363,16 @@ switch ($message) {
              $final = $menu;
              file_put_contents('errors.txt',$final);
             }
-                 $mass[$i] = $menu['user_id'];
-                 $arr3 = json_encode($mass);
+             //    $mass[$i] = $menu['user_id'];
+              //   $arr3 = json_encode($mass);
            }
                 
-                 file_put_contents('user.json', $arr3);
+               //  file_put_contents('user.json', $arr3);
                  
                 
                 $data = array(
            'recipient' => array('id' => "$id" ),
-           'message' => array("text" => "ваш заказ : пицца - ".$mass[1]."\n размер - ".$mass[2]."\n соус - ".$mass[6]."\n количество - ".$mass[3]."\n ваш номер - ".$mass[4]."\n ваш адресс - ".$mass[5],        
+           'message' => array("text" => "ваш заказ : пицца - ".$final[1]."\n размер - ".$final[2]."\n соус - ".$final[6]."\n количество - ".$final[3]."\n ваш номер - ".$final[4]."\n ваш адресс - ".$final[5],        
            
            )
            );
