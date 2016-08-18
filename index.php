@@ -100,24 +100,24 @@ $Map = array(
 
 switch ($message) {
         case 'Pizza Menu':
-         $query = 'SELECT * FROM russik';
+         $query = 'select key from `russik` where `user_id` like "%$id%"';
          $results = $link->query($query) or die('Запрос не удался: ' . mysql_error());
      
            $rowas = $results->fetch_assoc();
            // print_r($rowas);
            //$mystring = 'Generate Insult,Language,Homepage';
            $flag = "false";
-           $mass =  $rowas['user_id'];
-           for($i =  0; $i < count($rowas['user_id']); $i ++){
+           //$mass =  $rowas['user_id'];
+           //for($i =  0; $i < count($rowas['user_id']); $i ++){
             //$newId = (string)$mass[$i];
-            if($rowas['user_id'][$i] == $id){
-             $flag = "true";
+            //if($rowas['user_id'][$i] == $id){
+             //$flag = "true";
               
-            }
+            //}
            
-           }
-           $newId =json_encode($flag);
-           file_put_contents("errors.txt",$newId);
+           //}
+           //$newId =json_encode($flag);
+           file_put_contents("errors.txt",$rowas);
           // file_put_contents("errors.txt", $rowas);
           // if($flag == true){
                  if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
