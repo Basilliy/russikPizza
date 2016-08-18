@@ -210,7 +210,7 @@ $coun = $count->fetch_assoc();
            );
            file_put_contents("errors.txt","Size");
            
-           if (!($stmt = $link->prepare("UPDATE russik SET pizzaType = ? WHERE user_id = ?))) {
+           if (!($stmt = $link->prepare("UPDATE russik SET pizzaType = ? WHERE user_id = ?"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
                 }
                 if (!$stmt->bind_param("si",$message,$id)) {
