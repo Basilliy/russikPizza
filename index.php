@@ -40,7 +40,10 @@ $query = 'SELECT * FROM pizzaMenu';
 //print_r($rows['pizzaType']);
            //$mystring = 'Generate Insult,Language,Homepage';
 
-
+$query = 'SELECT COUNT(1) FROM russik';
+$count = $link->query($query) or die('Запрос не удался: ' . mysql_error());
+           
+$coun = $count->fetch_assoc();
 
 $buttonMenu = array(
         "content_type" => "text",
@@ -105,31 +108,20 @@ switch ($message) {
      
            $rowas = $results->fetch_assoc();
            
-           $query = 'SELECT COUNT(1) FROM russik';
-           $count = $link->query($query) or die('Запрос не удался: ' . mysql_error());
-           
-           $coun = $count->fetch_assoc();
-           
-           for($i = 0; $i < count($rowas); $i++){
-            $mass[$i] = $rowas['user_id'];
-           $arr3 = json_encode($mass);
-           file_put_contents('user.json', $arr3);
-           }
-           
            // print_r($rowas);
            //$mystring = 'Generate Insult,Language,Homepage';
            $flag = "false";
            //$mass =  $rowas['user_id'];
-           for($i =  0; $i < count($rowas['user_id']); $i ++){
+           for($i =  0; $i < $coun; $i ++){
             //$newId = (string)$mass[$i];
-            //if($rowas['user_id'][$i] == $id){
-             //$flag = "true";
+            if($rowas['user_id'][$i] == $id){
+             $flag = "true";
               
-            //}
+            }
            
            }
            //$newId =json_encode($flag);
-           file_put_contents("errors.txt",$coun);
+           file_put_contents("errors.txt",$flag);
           // file_put_contents("errors.txt", $rowas);
           // if($flag == true){
                  if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
