@@ -117,8 +117,8 @@ $coun = $count->fetch_assoc();
            //$mass =  $rowas['user_id'];
            for($i=0; $i < $coun[0]; $i++){
             //$newId = (string)$mass[$i];
-           // if($rowas['user_id'][$i] == $id){
-            // $flag = "true";
+            if($rowas['user_id'][$i] == $id){
+             $flag = "true";
               
            // }
            
