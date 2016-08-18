@@ -117,7 +117,7 @@ $coun = $count->fetch_assoc();
            //$mass =  $rowas['user_id'];
            for($i=0; $i < $coun['COUNT(1)']; $i++){
             //$newId = (string)$mass[$i];
-            if($rowas[$i] == $id){
+            if($rowas['user_id'] == $id){
              $flag = "true";
               
             }
@@ -130,7 +130,7 @@ $coun = $count->fetch_assoc();
            //$newId =json_encode($flag);
            file_put_contents("errors.txt",$flag);
           // file_put_contents("errors.txt", $rowas);
-           if($flag == true){
+           if($flag == "true"){
                  if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
                 }
