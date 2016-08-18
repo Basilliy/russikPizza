@@ -49,25 +49,6 @@ $coun = $count->fetch_assoc();
 //$stmt->bind_result($district);
 //$stmt->fetch();
 
-$query = 'SELECT * FROM russik';
-                $order = $link->query($query) or die('Запрос не удался: ' . mysql_error());
-               // print_r($result);
-               $menu = $order->fetch_assoc();
-                // $mass = $rowas['user_id'];
-                //$arr3 = json_encode($mass);
-                
-                for($i=0; $i < $coun['COUNT(1)']; $i++){
-            //$newId = (string)$mass[$i];
-            if($menu['user_id'] == $id){
-             $final = $menu;
-             file_put_contents('errors.txt',$final);
-            }
-                 $mass[$i] = $menu['user_id'];
-                 $arr3 = json_encode($mass);
-           }
-                
-                 file_put_contents('user.json', $arr3);
-                 
 
 $query = 'SELECT * FROM pizzaMenu';
  $result = $link->query($query) or die('Запрос не удался: ' . mysql_error());
@@ -369,11 +350,29 @@ switch ($message) {
               
                  //}
                 //}
-           
+           $query = 'SELECT * FROM russik';
+                $order = $link->query($query) or die('Запрос не удался: ' . mysql_error());
+               // print_r($result);
+               $menu = $order->fetch_assoc();
+                // $mass = $rowas['user_id'];
+                //$arr3 = json_encode($mass);
+                
+                for($i=0; $i < $coun['COUNT(1)']; $i++){
+            //$newId = (string)$mass[$i];
+            if($menu['user_id'] == $id){
+             $final = $menu;
+             file_put_contents('errors.txt',$final);
+            }
+                 $mass[$i] = $menu['user_id'];
+                 $arr3 = json_encode($mass);
+           }
+                
+                 file_put_contents('user.json', $arr3);
+                 
                 
                 $data = array(
            'recipient' => array('id' => "$id" ),
-           'message' => array("text" => "ваш закказ",
+           'message' => array("text" => "ваш заказ : пицца - ".$mass[1]."\n размер - ".$mass[2]."\n соус - ".$mass[6]."\n количество - ".$mass[3]."\n ваш номер - ".$mass[4]."\n ваш адресс - ".$mass[5],        
            
            )
            );
