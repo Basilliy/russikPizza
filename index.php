@@ -115,14 +115,14 @@ $coun = $count->fetch_assoc();
            //$mystring = 'Generate Insult,Language,Homepage';
            $flag = "false";
            //$mass =  $rowas['user_id'];
-           for($i=0; $i < $coun; $i++){
+           //for($i=0; $i < $coun; $i++){
             //$newId = (string)$mass[$i];
-            if($rowas['user_id'][$i] == $id){
-             $flag = "true";
+           // if($rowas['user_id'][$i] == $id){
+            // $flag = "true";
               
-            }
+           // }
            
-           }
+           //}
            //$newId =json_encode($flag);
            file_put_contents("errors.txt",$flag);
           // file_put_contents("errors.txt", $rowas);
