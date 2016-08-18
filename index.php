@@ -108,15 +108,15 @@ switch ($message) {
            //$mystring = 'Generate Insult,Language,Homepage';
            $flag = "false";
            $mass =  $rowas['user_id'];
-           for($i =  0; $i < count($rowas); $i ++){
+           for($i =  0; $i < count($rowas['user_id']); $i ++){
             //$newId = (string)$mass[$i];
-            //if($newId == $id){
-            // $flag = "true";
+            if($rowas['user_id'][$i] == $id){
+             $flag = "true";
               
-            //}
+            }
            
            }
-           $newId =json_encode($rowas['user_id']);
+           $newId =json_encode($flag);
            file_put_contents("errors.txt",$newId);
           // file_put_contents("errors.txt", $rowas);
           // if($flag == true){
