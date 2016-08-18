@@ -361,7 +361,7 @@ switch ($message) {
             //$newId = (string)$mass[$i];
             if($menu['user_id'] == $id){
              $final = $menu;
-             file_put_contents('errors.txt',$final);
+             file_put_contents('errors.txt',$final[1]);
             }
              //    $mass[$i] = $menu['user_id'];
               //   $arr3 = json_encode($mass);
