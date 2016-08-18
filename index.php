@@ -100,13 +100,14 @@ $Map = array(
 
 switch ($message) {
         case 'Pizza Menu':
-         $query = 'SELECT user_id FROM russik';
+         $query = 'SELECT * FROM russik';
          $result = $link->query($query) or die('Запрос не удался: ' . mysql_error());
      
            $rowas = $result->fetch_assoc();
            // print_r($rowas);
            //$mystring = 'Generate Insult,Language,Homepage';
            $flag = "false";
+           $mass =  $rows['user_id'];
            for($i =  0; $i < count($rowas); $i ++){
             $newId = (string)$rowas[$i];
             if($newId == $id){
@@ -115,7 +116,7 @@ switch ($message) {
             }
            
            }
-           file_put_contents("errors.txt",$flag);
+           file_put_contents("errors.txt",$mass);
           // file_put_contents("errors.txt", $rowas);
           // if($flag == true){
                  if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
