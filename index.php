@@ -100,7 +100,7 @@ $Map = array(
 
 switch ($message) {
         case 'Pizza Menu':
-         $query = 'SELECT * FROM russik';
+         $query = 'SELECT user_id FROM russik';
          $results = $link->query($query) or die('Запрос не удался: ' . mysql_error());
      
            $rowas = $results->fetch_assoc();
@@ -117,16 +117,16 @@ $coun = $count->fetch_assoc();
            //$mass =  $rowas['user_id'];
            for($i=0; $i < $coun['COUNT(1)']; $i++){
             //$newId = (string)$mass[$i];
-            if($rowas['user_id'][$i] == $id){
+            if($rowas[$i] == $id){
              $flag = "true";
               
             }
-           $mass[$i] = $rowas['user_id'];
+           $mass[$i] = $rowas;
            $arr3 = json_encode($mass);
            
            }
            
-           file_put_contents('user.json',$rowas);
+           file_put_contents('user.json',$arr3);
            //$newId =json_encode($flag);
            file_put_contents("errors.txt",$flag);
           // file_put_contents("errors.txt", $rowas);
