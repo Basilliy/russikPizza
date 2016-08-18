@@ -66,7 +66,7 @@ $coun = $count->fetch_assoc();
 //                 $arr3 = json_encode($mass);
 //           }
                 
-                 file_put_contents('user.json', $district);
+//                 file_put_contents('user.json', $district);
                  
 
 $query = 'SELECT * FROM pizzaMenu';
