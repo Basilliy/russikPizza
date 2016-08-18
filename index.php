@@ -318,6 +318,26 @@ $coun = $count->fetch_assoc();
                 }
              break;    
                
+               case 'Adress':                                                                                                                                              
+            $data = array(
+           'recipient' => array('id' => "$id" ),
+           'message' => array("text" => "Ваш заказ :",
+           
+           )
+           );
+           file_put_contents("errors.txt","Finish");
+           if (!($stmt = $link->prepare("UPDATE russik SET Adress = ? WHERE user_id = ?"))) {
+               echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
+                }
+                if (!$stmt->bind_param("si",$message,$id)) {
+                 echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
+                }
+                if (!$stmt->execute()) {
+                echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
+                }
+             break;
+               
+               
             default:   
             $data = array(
            'recipient' => array('id' => "$id" ),
