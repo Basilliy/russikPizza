@@ -147,6 +147,31 @@ $Map = array(
 
 
 switch ($message) {
+           
+           case 'Make Order':
+
+           
+           $data = array(
+           'recipient' => array('id' => "$id" ),
+           'message' => array("text" => "Your order is on the way"
+           
+           )
+           );
+
+        break;
+           
+       case 'Сhange Order':
+
+           
+           $data = array(
+           'recipient' => array('id' => "$id" ),
+           'message' => array("text" => "Функция в разработке",
+            "quick_replies" => json_encode($keyboardMenu)
+           )
+           );
+
+        break;
+       
         case 'Pizza Menu':
          $query = 'SELECT user_id FROM russik';
          $results = $link->query($query) or die('Запрос не удался: ' . mysql_error());
