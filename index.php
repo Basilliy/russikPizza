@@ -319,12 +319,7 @@ $coun = $count->fetch_assoc();
              break;    
                
                case 'Adress':                                                                                                                                              
-            $data = array(
-           'recipient' => array('id' => "$id" ),
-           'message' => array("text" => "Ваш заказ :",
-           
-           )
-           );
+            
            file_put_contents("errors.txt","Finish");
            if (!($stmt = $link->prepare("UPDATE russik SET Adress = ? WHERE user_id = ?"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
@@ -335,6 +330,27 @@ $coun = $count->fetch_assoc();
                 if (!$stmt->execute()) {
                 echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
                 }
+                
+                $query = 'SELECT * FROM pizzaMenu';
+                $order = $link->query($query) or die('Запрос не удался: ' . mysql_error());
+                // print_r($result);
+                $menu = $order->fetch_assoc();
+                
+               // for($i=0; $i < $coun['COUNT(1)']; $i++){
+                 //$newId = (string)$mass[$i];
+                //if($rowas['user_id'] == $id){
+                // $flag = "true";
+              
+                 //}
+                //}
+           
+                
+                $data = array(
+           'recipient' => array('id' => "$id" ),
+           'message' => array("text" => "$menu",
+           
+           )
+           );
              break;
                
                
