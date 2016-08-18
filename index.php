@@ -127,7 +127,7 @@ $coun = $count->fetch_assoc();
            }
            file_put_contents('user.json', $arr3);
            //$newId =json_encode($flag);
-           file_put_contents("errors.txt",$coun[0]);
+           file_put_contents("errors.txt",$coun);
           // file_put_contents("errors.txt", $rowas);
            if($flag == true){
                  if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
