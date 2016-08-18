@@ -50,7 +50,7 @@ $query = 'SELECT * FROM russik';
             // $flag = "true";
               
            // }
-                 $mass[$i] = $menu;
+                 $mass[$i] = $menu['user_id'];
                  $arr3 = json_encode($mass);
            }
                 
