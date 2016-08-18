@@ -37,6 +37,24 @@ $count = $link->query($query) or die('Запрос не удался: ' . mysql_
 $coun = $count->fetch_assoc();
 
 
+ $query = 'SELECT * FROM russik';
+                $order = $link->query($query) or die('Запрос не удался: ' . mysql_error());
+               // print_r($result);
+               $menu = $order->fetch_assoc();
+                // $mass = $rowas['user_id'];
+                //$arr3 = json_encode($mass);
+                
+                for($i=0; $i < $coun['COUNT(1)']; $i++){
+            //$newId = (string)$mass[$i];
+            if($menu['user_id'] == $id){
+             $final = $menu;
+             file_put_contents('errors.txt',$final[1]);
+            }
+             //    $mass[$i] = $menu['user_id'];
+              //   $arr3 = json_encode($mass);
+           }
+
+
 // if (!($stmt = $link->prepare("SELECT * FROM russik WHERE user_id = ?"))) {
   //             echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
  //               }
