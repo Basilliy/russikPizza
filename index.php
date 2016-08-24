@@ -15,10 +15,15 @@ $token = "EAAUZC7GZBxEEoBACUyZCPezBBfzGCq2pccAn0vHwUPulqIJ9F3XqLZAJcRneRaAGi9KfX
 $fp = json_decode(file_get_contents('user.json'), true);
 
 $before = file_get_contents("errors.txt");
-$be = file_get_contents("user.json");
-$text = $be['1275823659124425'];
+$be = json_decode(file_get_contents('user.json'), true);
+//$text = $be['1275823659124425'];
+//file_put_contents("errors.txt",$text);
+foreach ( $be as $key=> $value) {
+        if($key==$id){
+            $text = $value;
+        }
+    }
 file_put_contents("errors.txt",$text);
-
 
 $dbHost='upperl.mysql.ukraine.com.ua';// чаще всего это так, но иногда требуется прописать ip адрес базы данных
 $dbName='upperl_vadik';// название вашей базы
