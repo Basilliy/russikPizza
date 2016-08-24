@@ -288,6 +288,10 @@ switch ($message) {
            "quick_replies" => json_encode($keyboardSize)
            )
            );
+           
+           $mass[$id] = "Size";
+           $arr3 = json_encode($mass);
+           file_put_contents('user.json', $arr3);
            file_put_contents("errors.txt","Size");
            
            if (!($stmt = $link->prepare("UPDATE russik SET pizzaType = ? WHERE user_id = ?"))) {
@@ -323,6 +327,9 @@ switch ($message) {
            "quick_replies" => json_encode($keyboardSouce)
            )
            );
+           $mass[$id] = "Souce";
+           $arr3 = json_encode($mass);
+           file_put_contents('user.json', $arr3);
            file_put_contents("errors.txt","Souce");
            if (!($stmt = $link->prepare("UPDATE russik SET pizzaSize = ? WHERE user_id = ?"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
@@ -342,6 +349,9 @@ switch ($message) {
            
            )
            );
+           $mass[$id] = "Quantity";
+           $arr3 = json_encode($mass);
+           file_put_contents('user.json', $arr3);
            file_put_contents("errors.txt","Quantity");
            
            
@@ -366,6 +376,9 @@ switch ($message) {
            
            )
            );
+           $mass[$id] = "Phone";
+           $arr3 = json_encode($mass);
+           file_put_contents('user.json', $arr3);
            file_put_contents("errors.txt","Phone");
            if (!($stmt = $link->prepare("UPDATE russik SET pizzaQuantity = ? WHERE user_id = ?"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
@@ -386,6 +399,9 @@ switch ($message) {
            
            )
            );
+           $mass[$id] = "Adress";
+           $arr3 = json_encode($mass);
+           file_put_contents('user.json', $arr3);
            file_put_contents("errors.txt","Adress");
            if (!($stmt = $link->prepare("UPDATE russik SET phoneNumber = ? WHERE user_id = ?"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
@@ -398,8 +414,12 @@ switch ($message) {
                 }
              break;    
                
-               case 'Adress':                                                                                                                                              
-            
+               case 'Adress':       
+                          
+           $mass[$id] = "Finish";
+           $arr3 = json_encode($mass);
+           file_put_contents('user.json', $arr3); 
+           
            file_put_contents("errors.txt","Finish");
            if (!($stmt = $link->prepare("UPDATE russik SET Adress = ? WHERE user_id = ?"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
