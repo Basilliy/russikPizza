@@ -17,7 +17,7 @@ $fp = json_decode(file_get_contents('user.json'), true);
 $before = file_get_contents("errors.txt");
 $be = file_get_contents("user.json");
 //$be = json_decode($be);
-file_put_contents("errors.txt",$be);
+file_put_contents("errors.txt",$be['1275823659124425']);
 
 
 $dbHost='upperl.mysql.ukraine.com.ua';// чаще всего это так, но иногда требуется прописать ip адрес базы данных
