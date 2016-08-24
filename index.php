@@ -226,6 +226,11 @@ switch ($message) {
            "quick_replies" => json_encode($keyboardMenu)
            )
            );
+           
+           $mass[$id] = "Pizza type";
+           $arr3 = json_encode($mass);
+           file_put_contents('user.json', $arr3);
+           
            file_put_contents("errors.txt","Pizza type");
         break;
         case 'Our location':                                                                                                                                              
