@@ -264,7 +264,7 @@ switch ($message) {
            )
            );
            
-           $mass[$id] = "Pizza type";
+           $mass[$id] = "pizza Type";
            $arr3 = json_encode($mass);
            file_put_contents('user.json', $arr3);
            
@@ -304,7 +304,7 @@ switch ($message) {
         break;
           default:
            switch($before){
-            case 'Pizza type':                                                                                                                                              
+            case 'pizza Type':                                                                                                                                              
            $findme   = ',';
            $button = explode($findme, $rows['pizzaSize']);
            
@@ -326,7 +326,7 @@ switch ($message) {
            )
            );
            
-           $mass[$id] = "Size";
+           $mass[$id] = "pizza Size";
            $arr3 = json_encode($mass);
            file_put_contents('user.json', $arr3);
            //file_put_contents("errors.txt","Size");
@@ -335,7 +335,7 @@ switch ($message) {
            
             break;   
              
-             case 'Size':                                                                                                                                              
+             case 'pizza Size':                                                                                                                                              
              $findme   = ',';
            $button = explode($findme, $rows['pizzaSouce']);
            
@@ -356,7 +356,7 @@ switch ($message) {
            "quick_replies" => json_encode($keyboardSouce)
            )
            );
-           $mass[$id] = "Souce";
+           $mass[$id] = "pizza Souce";
            $arr3 = json_encode($mass);
            file_put_contents('user.json', $arr3);
            //file_put_contents("errors.txt","Souce");
@@ -364,14 +364,14 @@ switch ($message) {
           
              break;  
                
-             case 'Souce':                                                                                                                                              
+             case 'pizza Souce':                                                                                                                                              
             $data = array(
            'recipient' => array('id' => "$id" ),
            'message' => array("text" => "Enter quantity of pizza",
            
            )
            );
-           $mass[$id] = "Quantity";
+           $mass[$id] = "pizza Quantity";
            $arr3 = json_encode($mass);
            file_put_contents('user.json', $arr3);
           // file_put_contents("errors.txt","Quantity");
@@ -381,14 +381,14 @@ switch ($message) {
              break;  
               
               
-              case 'Quantity':                                                                                                                                              
+              case 'pizza Quantity':                                                                                                                                              
             $data = array(
            'recipient' => array('id' => "$id" ),
            'message' => array("text" => "Enter your phone number",
            
            )
            );
-           $mass[$id] = "Phone";
+           $mass[$id] = "phone Number";
            $arr3 = json_encode($mass);
            file_put_contents('user.json', $arr3);
            //file_put_contents("errors.txt","Phone");
@@ -396,7 +396,7 @@ switch ($message) {
            
              break;
                
-              case 'Phone':                                                                                                                                              
+              case 'phone Number':                                                                                                                                              
             $data = array(
            'recipient' => array('id' => "$id" ),
            'message' => array("text" => "Enter your Adress",
