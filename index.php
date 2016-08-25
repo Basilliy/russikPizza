@@ -346,7 +346,7 @@ switch ($message) {
             if (!($stmt = $link->prepare("UPDATE russik SET pizzaType = ? WHERE user_id = ?"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
                 }
-                if (!$stmt->bind_param("si",$message,$user_id)) {
+                if (!$stmt->bind_param("si",$message,$id)) {
                  echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
                 }
                 if (!$stmt->execute()) {
