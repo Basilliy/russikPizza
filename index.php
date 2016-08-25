@@ -13,7 +13,7 @@ $fb = json_decode($fb);
 $id = $fb->entry[0]->messaging[0]->sender->id;
 $reid = $fb->entry[0]->messaging[0]->recipient->id;
 $message = $fb->entry[0]->messaging[0]->message->text;
-$token = "EAAUZC7GZBxEEoBACUyZCPezBBfzGCq2pccAn0vHwUPulqIJ9F3XqLZAJcRneRaAGi9KfXCcnAJ7VHONB6yZC8NZCZB2t5ZBtYgfEQ1aAWZCDYGPBWSxrmLEGz2Fp3azTeJDKm7uqOZAZAJZBgUMXbZAWQL8YYr8MDE3IwzSKZA7EcdkdD0wwZDZD";
+$token = "EAAUZC7GZBxEEoBAMpGrZB1yEfdZBihr0mWMN7rU1J3nf2KXQlTpymxcZBjbyfQXASNsCRwcfGbA2S8nh2hrZBGnZA8NkWeHaDS5O3MKEjLBggOVyOUSeZBupfHM76ABTPcNBSev0Ioc0M0Y0Ouh0CMZAkzmukoZAXkrOSncdkiJet9PQZDZD";
 $fp = json_decode(file_get_contents('user.json'), true);
 
 $rus = new СhangeOrder;
