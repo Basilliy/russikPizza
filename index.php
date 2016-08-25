@@ -14,16 +14,16 @@ $message = $fb->entry[0]->messaging[0]->message->text;
 $token = "EAAUZC7GZBxEEoBACUyZCPezBBfzGCq2pccAn0vHwUPulqIJ9F3XqLZAJcRneRaAGi9KfXCcnAJ7VHONB6yZC8NZCZB2t5ZBtYgfEQ1aAWZCDYGPBWSxrmLEGz2Fp3azTeJDKm7uqOZAZAJZBgUMXbZAWQL8YYr8MDE3IwzSKZA7EcdkdD0wwZDZD";
 $fp = json_decode(file_get_contents('user.json'), true);
 
-$before = file_get_contents("errors.txt");
+//$before = file_get_contents("errors.txt");
 $be = json_decode(file_get_contents('user.json'), true);
 //$text = $be['1275823659124425'];
 //file_put_contents("errors.txt",$text);
 foreach ( $be as $key=> $value) {
         if($key==$id){
-            $text = $value;
+            $before = $value;
         }
     }
-file_put_contents("errors.txt",$text);
+//file_put_contents("errors.txt",$text);
 
 $dbHost='upperl.mysql.ukraine.com.ua';// чаще всего это так, но иногда требуется прописать ip адрес базы данных
 $dbName='upperl_vadik';// название вашей базы
@@ -301,7 +301,7 @@ switch ($message) {
            $mass[$id] = "Size";
            $arr3 = json_encode($mass);
            file_put_contents('user.json', $arr3);
-           file_put_contents("errors.txt","Size");
+           //file_put_contents("errors.txt","Size");
            
            if (!($stmt = $link->prepare("UPDATE russik SET pizzaType = ? WHERE user_id = ?"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
@@ -361,7 +361,7 @@ switch ($message) {
            $mass[$id] = "Quantity";
            $arr3 = json_encode($mass);
            file_put_contents('user.json', $arr3);
-           file_put_contents("errors.txt","Quantity");
+          // file_put_contents("errors.txt","Quantity");
            
            
            if (!($stmt = $link->prepare("UPDATE russik SET 	pizzaSouce = ? WHERE user_id = ?"))) {
@@ -388,7 +388,7 @@ switch ($message) {
            $mass[$id] = "Phone";
            $arr3 = json_encode($mass);
            file_put_contents('user.json', $arr3);
-           file_put_contents("errors.txt","Phone");
+           //file_put_contents("errors.txt","Phone");
            if (!($stmt = $link->prepare("UPDATE russik SET pizzaQuantity = ? WHERE user_id = ?"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
                 }
@@ -411,7 +411,7 @@ switch ($message) {
            $mass[$id] = "Adress";
            $arr3 = json_encode($mass);
            file_put_contents('user.json', $arr3);
-           file_put_contents("errors.txt","Adress");
+          // file_put_contents("errors.txt","Adress");
            if (!($stmt = $link->prepare("UPDATE russik SET phoneNumber = ? WHERE user_id = ?"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
                 }
@@ -429,7 +429,7 @@ switch ($message) {
            $arr3 = json_encode($mass);
            file_put_contents('user.json', $arr3); 
            
-           file_put_contents("errors.txt","Finish");
+          // file_put_contents("errors.txt","Finish");
            if (!($stmt = $link->prepare("UPDATE russik SET Adress = ? WHERE user_id = ?"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
                 }
