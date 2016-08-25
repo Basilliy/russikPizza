@@ -6,7 +6,7 @@
  * Time: 10:56
  */
  
-include 'СhangeOrder.php';
+//include 'СhangeOrder.php';
 file_put_contents("fb.txt",file_get_contents("php://input"));
 $fb = file_get_contents("fb.txt");
 $fb = json_decode($fb);
@@ -16,7 +16,7 @@ $message = $fb->entry[0]->messaging[0]->message->text;
 $token = "EAAUZC7GZBxEEoBAMpGrZB1yEfdZBihr0mWMN7rU1J3nf2KXQlTpymxcZBjbyfQXASNsCRwcfGbA2S8nh2hrZBGnZA8NkWeHaDS5O3MKEjLBggOVyOUSeZBupfHM76ABTPcNBSev0Ioc0M0Y0Ouh0CMZAkzmukoZAXkrOSncdkiJet9PQZDZD";
 $fp = json_decode(file_get_contents('user.json'), true);
 
-$rus = new СhangeOrder;
+//$rus = new СhangeOrder;
 
 //$before = file_get_contents("errors.txt");
 $be = json_decode(file_get_contents('user.json'), true);
@@ -28,7 +28,7 @@ foreach ( $be as $key=> $value) {
         }
     }
     
-file_put_contents("errors.txt",$rus->printHi());
+//file_put_contents("errors.txt",$rus->printHi());
 
 $dbHost='upperl.mysql.ukraine.com.ua';// чаще всего это так, но иногда требуется прописать ip адрес базы данных
 $dbName='upperl_vadik';// название вашей базы
