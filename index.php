@@ -7,6 +7,7 @@
  */
  
 include 'СhangeOrder.php';
+include 'MakeOrder.php';
 file_put_contents("fb.txt",file_get_contents("php://input"));
 $fb = file_get_contents("fb.txt");
 $fb = json_decode($fb);
@@ -17,6 +18,7 @@ $token = "EAAUZC7GZBxEEoBAMpGrZB1yEfdZBihr0mWMN7rU1J3nf2KXQlTpymxcZBjbyfQXASNsCR
 $fp = json_decode(file_get_contents('user.json'), true);
 
 $rus = new СhangeOrder;
+$MakeCheck = new MakeOrder;
 
 $dbHost='upperl.mysql.ukraine.com.ua';// чаще всего это так, но иногда требуется прописать ip адрес базы данных
 $dbName='upperl_vadik';// название вашей базы
@@ -217,26 +219,8 @@ switch ($message) {
                 echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
                 }
             }
-           $findme   = ',';
-           $button = explode($findme, $rows['pizzaType']);
-           
-           for($i = 0; $i < count($button); $i ++){
             
-            ${$button[$i]}= array(
-            "content_type" => "text",
-            "title" => "$button[$i]",
-            "payload" => "$button[$i]"
-            );
-            $keyboardMenu[$i] = ${$button[$i]};
-            
-            }
-           
-           $data = array(
-           'recipient' => array('id' => "$id" ),
-           'message' => array("text" => "Pizza type",
-           "quick_replies" => json_encode($keyboardMenu)
-           )
-           );
+           $data = $MakeCheck->makePizzaType($rows,$id);
            
            $mass[$id] = "pizza Type";
            $arr3 = json_encode($mass);
