@@ -220,7 +220,7 @@ switch ($message) {
                 }
             }
             
-           $data = $MakeCheck->makePizzaType($rows,$id);
+           $data = $MakeCheck->makePizzaType($rows,$id,$keyboardMenu);
            
            $mass[$id] = "pizza Type";
            $arr3 = json_encode($mass);
