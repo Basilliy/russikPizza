@@ -339,7 +339,7 @@ switch ($message) {
            $mass[$id] = "Souce";
            $arr3 = json_encode($mass);
            file_put_contents('user.json', $arr3);
-           file_put_contents("errors.txt","Souce");
+           //file_put_contents("errors.txt","Souce");
            if (!($stmt = $link->prepare("UPDATE russik SET pizzaSize = ? WHERE user_id = ?"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
                 }
