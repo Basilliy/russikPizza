@@ -7,6 +7,25 @@ class СhangeOrder{
     
   }
   
+  
+  function ChangePizzaType(){
+    
+  }
+  function ChangePizzaSize(){
+    
+  }
+  function ChangePizzaQuantity(){
+    
+  }
+  function ChangePhoneNumber(){
+    
+  }
+  function ChangeAdress(){
+    
+  }
+  function ChangePizzaSouce(){
+    
+  }
 }
 
 
