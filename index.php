@@ -14,7 +14,7 @@ $fb = json_decode($fb);
 $id = $fb->entry[0]->messaging[0]->sender->id;
 $reid = $fb->entry[0]->messaging[0]->recipient->id;
 $message = $fb->entry[0]->messaging[0]->message->text;
-$token = "EAAUZC7GZBxEEoBAMpGrZB1yEfdZBihr0mWMN7rU1J3nf2KXQlTpymxcZBjbyfQXASNsCRwcfGbA2S8nh2hrZBGnZA8NkWeHaDS5O3MKEjLBggOVyOUSeZBupfHM76ABTPcNBSev0Ioc0M0Y0Ouh0CMZAkzmukoZAXkrOSncdkiJet9PQZDZD";
+$token = "EAAUZC7GZBxEEoBANtt0BRptegICYxIeE91N0Xt5KQZAHJAmeREQbdl6SZAsNWWplnP2OD2Qeyyf709WQsxUsLdJ5bnwYdEmjc2a5wl3ZCPri1XwueqJ00ZCoiBlUO0vhGb39d053tZC2hsCGTtXDbtGFwC53gXRlI7nQGkVIdZCACwZDZD";
 $fp = json_decode(file_get_contents('user.json'), true);
 
 $rus = new СhangeOrder;
@@ -221,6 +221,27 @@ switch ($message) {
             }
             
            //$data = $MakeCheck->makePizzaType($rows,$id,$keyboardMenu);
+           
+           $findme   = ',';
+           $button = explode($findme, $rows['pizzaType']);
+           
+           for($i = 0; $i < count($button); $i ++){
+            
+            ${$button[$i]}= array(
+            "content_type" => "text",
+            "title" => "$button[$i]",
+            "payload" => "$button[$i]"
+            );
+            $keyboardMenu[$i] = ${$button[$i]};
+            
+            }
+           $data = array(
+           'recipient' => array('id' => "$id" ),
+           'message' => array("text" => "Pizza type",
+           "quick_replies" => json_encode($keyboardMenu)
+           )
+           );
+           
            
            $mass[$id] = "pizza Type";
            $arr3 = json_encode($mass);
