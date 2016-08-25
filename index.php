@@ -342,16 +342,16 @@ switch ($message) {
            file_put_contents('user.json', $arr3);
            //file_put_contents("errors.txt","Size");
            
-           //$rus->ChangePizzaType($message,$id);
-            if (!($stmt = $link->prepare("UPDATE russik SET pizzaType = ? WHERE user_id = ?"))) {
-               echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
-                }
-                if (!$stmt->bind_param("si",$message,$id)) {
-                 echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
-                }
-                if (!$stmt->execute()) {
-                echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
-                }
+           $rus->ChangePizzaType($link,$message,$id);
+           // if (!($stmt = $link->prepare("UPDATE russik SET pizzaType = ? WHERE user_id = ?"))) {
+           //    echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
+          //      }
+           //     if (!$stmt->bind_param("si",$message,$id)) {
+            //     echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
+            //    }
+            //    if (!$stmt->execute()) {
+            //    echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
+           //     }
             break;   
              
              case 'Size':                                                                                                                                              
