@@ -18,18 +18,6 @@ $fp = json_decode(file_get_contents('user.json'), true);
 
 $rus = new СhangeOrder;
 
-//$before = file_get_contents("errors.txt");
-$be = json_decode(file_get_contents('user.json'), true);
-//$text = $be['1275823659124425'];
-//file_put_contents("errors.txt",$text);
-foreach ( $be as $key=> $value) {
-        if($key==$id){
-            $before = $value;
-        }
-    }
-    
-file_put_contents("errors.txt",$rus->printHi());
-
 $dbHost='upperl.mysql.ukraine.com.ua';// чаще всего это так, но иногда требуется прописать ip адрес базы данных
 $dbName='upperl_vadik';// название вашей базы
 $dbUser='upperl_vadik';// пользователь базы данных
@@ -44,6 +32,25 @@ $link->set_charset("utf8");
 //$link = mysqli_connect($host, $user, $password,$database)
 //    or die('Не удалось соединиться: ' . mysql_error());
 //echo 'Соединение успешно установлено';
+
+if(($message=='pizza Type')||($message=='pizza Size')||($message=='pizza Quantity')||($message=='phone Number')||($message=='Adress')||($message=='pizza Souce')){
+ $mass[$id] = $message;
+           $arr3 = json_encode($mass);
+           file_put_contents('user.json', $arr3);
+}
+
+//$before = file_get_contents("errors.txt");
+$be = json_decode(file_get_contents('user.json'), true);
+//$text = $be['1275823659124425'];
+//file_put_contents("errors.txt",$text);
+foreach ( $be as $key=> $value) {
+        if($key==$id){
+            $before = $value;
+        }
+    }
+    
+
+
 
 $query = 'SELECT COUNT(1) FROM russik';
 $count = $link->query($query) or die('Запрос не удался: ' . mysql_error());
