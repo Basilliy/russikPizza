@@ -210,7 +210,7 @@ switch ($message) {
            $data = array(
            'recipient' => array('id' => "$id" ),
            'message' => array("text" => "Select the field you want to change",
-            "quick_replies" => json_encode($keyboardСhangeOrder)
+            "quick_replies" => json_encode($rus->ChangeMenu())
            )
            );
 
