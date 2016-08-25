@@ -35,8 +35,8 @@ $link->set_charset("utf8");
 
 if(($message=='pizza Type')||($message=='pizza Size')||($message=='pizza Quantity')||($message=='phone Number')||($message=='Adress')||($message=='pizza Souce')){
  $mass[$id] = $message;
-           $arr3 = json_encode($mass);
-           file_put_contents('user.json', $arr3);
+$arr3 = json_encode($mass);
+file_put_contents('user.json', $arr3);
 }
 
 //$before = file_get_contents("errors.txt");
@@ -210,7 +210,7 @@ switch ($message) {
            $data = array(
            'recipient' => array('id' => "$id" ),
            'message' => array("text" => "Select the field you want to change",
-            "quick_replies" => json_encode($keyboardСhangeOrder)
+            "quick_replies" => json_encode($rus->ChangeMenu())
            )
            );
 
