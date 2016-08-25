@@ -70,17 +70,6 @@ $coun = $count->fetch_assoc();
            }
 
 
-// if (!($stmt = $link->prepare("SELECT * FROM russik WHERE user_id = ?"))) {
-  //             echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
- //               }
- //               if (!$stmt->bind_param("i", $id)) {
- //                echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
-//               }
-//              if (!$stmt->execute()) {
- //               echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
-  //              }
-//$stmt->bind_result($district);
-//$stmt->fetch();
 
 
 $query = 'SELECT * FROM pizzaMenu';
@@ -343,15 +332,7 @@ switch ($message) {
            //file_put_contents("errors.txt","Size");
            
            $rus->ChangePizzaType($link,$message,$id);
-           // if (!($stmt = $link->prepare("UPDATE russik SET pizzaType = ? WHERE user_id = ?"))) {
-           //    echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
-          //      }
-           //     if (!$stmt->bind_param("si",$message,$id)) {
-            //     echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
-            //    }
-            //    if (!$stmt->execute()) {
-            //    echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
-           //     }
+           
             break;   
              
              case 'Size':                                                                                                                                              
@@ -380,15 +361,7 @@ switch ($message) {
            file_put_contents('user.json', $arr3);
            //file_put_contents("errors.txt","Souce");
            $rus->ChangePizzaSize($link,$message,$id);
-          // if (!($stmt = $link->prepare("UPDATE russik SET pizzaSize = ? WHERE user_id = ?"))) {
-          //     echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
-          //      }
-          //      if (!$stmt->bind_param("si",$message,$id)) {
-          //       echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
-          //     }
-          //      if (!$stmt->execute()) {
-          //      echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
-          //      }
+          
              break;  
                
              case 'Souce':                                                                                                                                              
@@ -404,17 +377,7 @@ switch ($message) {
           // file_put_contents("errors.txt","Quantity");
            
            $rus->ChangePizzaSouce($link,$message,$id);
-          // if (!($stmt = $link->prepare("UPDATE russik SET 	pizzaSouce = ? WHERE user_id = ?"))) {
-          //     echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
-          //      }
-          //      if (!$stmt->bind_param("si",$message,$id)) {
-          //       echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
-          //      }
-          //      if (!$stmt->execute()) {
-          //      echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
-          //      }
-           
-           
+          
              break;  
               
               
@@ -430,15 +393,6 @@ switch ($message) {
            file_put_contents('user.json', $arr3);
            //file_put_contents("errors.txt","Phone");
            $rus->ChangePizzaQuantity($link,$message,$id);
-           //if (!($stmt = $link->prepare("UPDATE russik SET pizzaQuantity = ? WHERE user_id = ?"))) {
-           //    echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
-           //     }
-           //     if (!$stmt->bind_param("ii",$message,$id)) {
-           //      echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
-           //    }
-           //     if (!$stmt->execute()) {
-           //     echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
-           //     }
            
              break;
                
@@ -454,15 +408,7 @@ switch ($message) {
            file_put_contents('user.json', $arr3);
           // file_put_contents("errors.txt","Adress");
           $rus->ChangePhoneNumber($link,$message,$id);
-          // if (!($stmt = $link->prepare("UPDATE russik SET phoneNumber = ? WHERE user_id = ?"))) {
-          //     echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
-          //      }
-          //      if (!$stmt->bind_param("ii",$message,$id)) {
-          //       echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
-          //     }
-          //      if (!$stmt->execute()) {
-          //      echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
-          //      }
+          
              break;    
                
                case 'Adress':       
@@ -473,26 +419,7 @@ switch ($message) {
            
           // file_put_contents("errors.txt","Finish");
           $rus->ChangeAdress($link,$message,$id);
-          // if (!($stmt = $link->prepare("UPDATE russik SET Adress = ? WHERE user_id = ?"))) {
-          //     echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
-          //      }
-          //      if (!$stmt->bind_param("si",$message,$id)) {
-          //       echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
-          //      }
-          //      if (!$stmt->execute()) {
-          //      echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
-          //      }
-                
-                
-           
           
-               // for($i=0; $i < $coun['COUNT(1)']; $i++){
-                 //$newId = (string)$mass[$i];
-                //if($rowas['user_id'] == $id){
-                // $flag = "true";
-              
-                 //}
-                //}
            $query = 'SELECT * FROM russik';
                 $order = $link->query($query) or die('Запрос не удался: ' . mysql_error());
                // print_r($result);
