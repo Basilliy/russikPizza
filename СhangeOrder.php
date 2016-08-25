@@ -28,7 +28,7 @@ class СhangeOrder{
                 }
   }
   function ChangePizzaSize($message,$user_id){
-    if (!($stmt = $link->prepare("UPDATE russik SET pizzaSize = ? WHERE user_id = ?"))) {
+    if (!($stmt = $this->link->prepare("UPDATE russik SET pizzaSize = ? WHERE user_id = ?"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
                 }
                 if (!$stmt->bind_param("si",$message,$user_id)) {
@@ -39,7 +39,7 @@ class СhangeOrder{
                 }
   }
   function ChangePizzaQuantity($message,$user_id){
-    if (!($stmt = $link->prepare("UPDATE russik SET pizzaQuantity = ? WHERE user_id = ?"))) {
+    if (!($stmt = $this->link->prepare("UPDATE russik SET pizzaQuantity = ? WHERE user_id = ?"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
                 }
                 if (!$stmt->bind_param("si",$message,$user_id)) {
@@ -50,7 +50,7 @@ class СhangeOrder{
                 }
   }
   function ChangePhoneNumber($message,$user_id){
-    if (!($stmt = $link->prepare("UPDATE russik SET phoneNumber = ? WHERE user_id = ?"))) {
+    if (!($stmt = $this->link->prepare("UPDATE russik SET phoneNumber = ? WHERE user_id = ?"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
                 }
                 if (!$stmt->bind_param("si",$message,$user_id)) {
@@ -61,7 +61,7 @@ class СhangeOrder{
                 }
   }
   function ChangeAdress($message,$user_id){
-    if (!($stmt = $link->prepare("UPDATE russik SET Adress = ? WHERE user_id = ?"))) {
+    if (!($stmt = $this->link->prepare("UPDATE russik SET Adress = ? WHERE user_id = ?"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
                 }
                 if (!$stmt->bind_param("si",$message,$user_id)) {
@@ -72,7 +72,7 @@ class СhangeOrder{
                 }
   }
   function ChangePizzaSouce($message,$user_id){
-    if (!($stmt = $link->prepare("UPDATE russik SET pizzaSouce = ? WHERE user_id = ?"))) {
+    if (!($stmt = $this->link->prepare("UPDATE russik SET pizzaSouce = ? WHERE user_id = ?"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
                 }
                 if (!$stmt->bind_param("si",$message,$user_id)) {
