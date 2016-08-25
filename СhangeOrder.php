@@ -1,5 +1,5 @@
 <?php 
-class Change {
+class СhangeOrder{
   
   function printHi(){
     $hi = "russik say hi";
