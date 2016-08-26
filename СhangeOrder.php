@@ -78,22 +78,22 @@ class СhangeOrder{
   function ChangeMenu(){
     $pizzaType = array(
         "content_type" => "text",
-        "title" => "pizza Type",
+        "title" => "pizzaType",
         "payload" => "DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_pizzaType"
  );
 $pizzaSize = array(
         "content_type" => "text",
-        "title" => "pizza Size",
+        "title" => "pizzaSize",
         "payload" => "DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_pizzaSize"
  );
  $pizzaQuantity = array(
         "content_type" => "text",
-        "title" => "pizza Quantity",
+        "title" => "pizzaQuantity",
         "payload" => "DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_pizzaQuantity"
  );
  $phoneNumber = array(
         "content_type" => "text",
-        "title" => "phone Number",
+        "title" => "phoneNumber",
         "payload" => "DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_phoneNumber"
  );
  $Adress = array(
@@ -103,7 +103,7 @@ $pizzaSize = array(
  );
   $pizzaSouce = array(
         "content_type" => "text",
-        "title" => "pizza Souce",
+        "title" => "pizzaSouce",
         "payload" => "DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_pizzaSouce"
  );
 $keyboardСhangeOrder =[$pizzaType,$pizzaSize,$pizzaSouce,$pizzaQuantity,$phoneNumber,$Adress];
