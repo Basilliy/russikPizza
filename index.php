@@ -224,10 +224,10 @@ switch ($message) {
                 }
             }
             
+           $text = "pizza Type";
+         $data = $MakeCheck->GetOrderMenu($rows, $id, $text);
            
-         $data = $MakeCheck->GetOrderMenu($rows, $id);
-           
-           $mass[$id] = "pizza Type";
+           $mass[$id] = $text;
            $arr3 = json_encode($mass);
            file_put_contents('user.json', $arr3);
            
