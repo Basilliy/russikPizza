@@ -46,7 +46,7 @@ $be = json_decode(file_get_contents('user.json'), true);
 //$text = $be['1275823659124425'];
 
 
-file_put_contents("errors.txt",$MakeCheck->printHi());
+//file_put_contents("errors.txt",$MakeCheck->printHi());
 
 
 foreach ( $be as $key=> $value) {
@@ -225,27 +225,7 @@ switch ($message) {
             }
             
            
-           
-           $findme   = ',';
-           $button = explode($findme, $rows['pizzaType']);
-           
-           for($i = 0; $i < count($button); $i ++){
-            
-            ${$button[$i]}= array(
-            "content_type" => "text",
-            "title" => "$button[$i]",
-            "payload" => "$button[$i]"
-            );
-            $keyboardMenu[$i] = ${$button[$i]};
-            
-            }
-           $data = array(
-           'recipient' => array('id' => "$id" ),
-           'message' => array("text" => "Pizza type",
-           "quick_replies" => json_encode($keyboardMenu)
-           )
-           );
-           
+         $data = $MakeCheck->GetOrderMenu($rows, $id);
            
            $mass[$id] = "pizza Type";
            $arr3 = json_encode($mass);
