@@ -18,7 +18,7 @@ $token = "EAAUZC7GZBxEEoBACm7cbsg5nEauPoEaZBvugt12mKA8svRpP1NWiiNxrDE78EQLsz8VJ0
 $fp = json_decode(file_get_contents('user.json'), true);
 
 $rus = new СhangeOrder;
-//$MakeCheck = new MakeOrder;
+$MakeCheck = new MakeOrder;
 
 $dbHost='upperl.mysql.ukraine.com.ua';// чаще всего это так, но иногда требуется прописать ip адрес базы данных
 $dbName='upperl_vadik';// название вашей базы
@@ -44,7 +44,11 @@ file_put_contents('user.json', $arr3);
 //$before = file_get_contents("errors.txt");
 $be = json_decode(file_get_contents('user.json'), true);
 //$text = $be['1275823659124425'];
-//file_put_contents("errors.txt",$text);
+
+
+file_put_contents("errors.txt",$MakeCheck->printHi());
+
+
 foreach ( $be as $key=> $value) {
         if($key==$id){
             $before = $value;
