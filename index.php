@@ -224,7 +224,7 @@ switch ($message) {
                 }
             }
             
-           $text = 'pizza Type';
+           $text = 'pizzaType';
          $data = $MakeCheck->GetOrderMenu($rows, $id, $text);
            
            $mass[$id] = $text;
@@ -267,8 +267,8 @@ switch ($message) {
         break;
           default:
            switch($before){
-           case 'pizza Type':   
-           $text = "pizza Size";
+           case 'pizzaType':   
+           $text = "pizzaSize";
            $data = $MakeCheck->GetOrderMenu($rows, $id, $text);
            
            $mass[$id] = $text;
@@ -280,7 +280,7 @@ switch ($message) {
            
             break;   
              
-             case 'pizza Size': 
+             case 'pizzaSize': 
               
               $text = "pizzaSouce";
            $data = $MakeCheck->GetOrderMenu($rows, $id, $text);
@@ -294,14 +294,14 @@ switch ($message) {
           
              break;  
                
-             case 'pizza Souce':                                                                                                                                              
+             case 'pizzaSouce':                                                                                                                                              
             $data = array(
            'recipient' => array('id' => "$id" ),
            'message' => array("text" => "Enter quantity of pizza",
            
            )
            );
-           $mass[$id] = "pizza Quantity";
+           $mass[$id] = "pizzaQuantity";
            $arr3 = json_encode($mass);
            file_put_contents('user.json', $arr3);
           // file_put_contents("errors.txt","Quantity");
@@ -311,14 +311,14 @@ switch ($message) {
              break;  
               
               
-              case 'pizza Quantity':                                                                                                                                              
+              case 'pizzaQuantity':                                                                                                                                              
             $data = array(
            'recipient' => array('id' => "$id" ),
            'message' => array("text" => "Enter your phone number",
            
            )
            );
-           $mass[$id] = "phone Number";
+           $mass[$id] = "phoneNumber";
            $arr3 = json_encode($mass);
            file_put_contents('user.json', $arr3);
            //file_put_contents("errors.txt","Phone");
@@ -326,7 +326,7 @@ switch ($message) {
            
              break;
                
-              case 'phone Number':                                                                                                                                              
+              case 'phoneNumber':                                                                                                                                              
             $data = array(
            'recipient' => array('id' => "$id" ),
            'message' => array("text" => "Enter your Adress",
