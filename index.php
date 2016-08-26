@@ -37,7 +37,7 @@ $link->set_charset("utf8");
 
 if(($message=='pizzaType')||($message=='pizzaSize')||($message=='pizzaQuantity')||($message=='phoneNumber')||($message=='Adress')||($message=='pizzaSouce')){
 $data = $MakeCheck->GetOrderMenu($rows, $id, $message);
-/file_put_contents("errors.txt",$MakeCheck->printHi());
+file_put_contents("errors.txt",$MakeCheck->printHi());
 // $mass[$id] = $message;
 //$arr3 = json_encode($mass);
 //file_put_contents('user.json', $arr3);
