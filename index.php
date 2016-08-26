@@ -224,7 +224,7 @@ switch ($message) {
                 }
             }
             
-           $text = "pizza Type";
+           $text = 'pizza Type';
          $data = $MakeCheck->GetOrderMenu($rows, $id, $text);
            
            $mass[$id] = $text;
