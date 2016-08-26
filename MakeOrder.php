@@ -9,6 +9,7 @@ class MakeOrder{
   }
   
   function GetOrderMenu($rows, $id, $text){
+    file_put_contents("errors.txt",$rows);
      $findme   = ',';
            $button = explode($findme, $rows["$text"]);
            
