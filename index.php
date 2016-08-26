@@ -7,7 +7,7 @@
  */
  
 include_once 'СhangeOrder.php';
-require 'MakeOrder.php';
+//require 'MakeOrder.php';
 file_put_contents("fb.txt",file_get_contents("php://input"));
 $fb = file_get_contents("fb.txt");
 $fb = json_decode($fb);
