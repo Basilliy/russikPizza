@@ -35,10 +35,11 @@ $link->set_charset("utf8");
 //    or die('Не удалось соединиться: ' . mysql_error());
 //echo 'Соединение успешно установлено';
 
-if(($message=='pizza Type')||($message=='pizza Size')||($message=='pizza Quantity')||($message=='phone Number')||($message=='Adress')||($message=='pizza Souce')){
- $mass[$id] = $message;
-$arr3 = json_encode($mass);
-file_put_contents('user.json', $arr3);
+if(($message=='pizzaType')||($message=='pizzaSize')||($message=='pizzaQuantity')||($message=='phoneNumber')||($message=='Adress')||($message=='pizzaSouce')){
+$data = $MakeCheck->GetOrderMenu($rows, $id, $message);
+// $mass[$id] = $message;
+//$arr3 = json_encode($mass);
+//file_put_contents('user.json', $arr3);
 }
 
 //$before = file_get_contents("errors.txt");
