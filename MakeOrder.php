@@ -8,9 +8,9 @@ class MakeOrder{
     
   }
   
-  function GetOrderMenu($rows, $id){
+  function GetOrderMenu($rows, $id, $text){
      $findme   = ',';
-           $button = explode($findme, $rows['pizzaType']);
+           $button = explode($findme, $rows[$text]);
            
            for($i = 0; $i < count($button); $i ++){
             
