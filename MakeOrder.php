@@ -10,7 +10,7 @@ class MakeOrder{
   
   function GetOrderMenu($rows, $id, $text){
      $findme   = ',';
-           $button = explode($findme, $rows[$text]);
+           $button = explode($findme, $rows["$text"]);
            
            for($i = 0; $i < count($button); $i ++){
             
