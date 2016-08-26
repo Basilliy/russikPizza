@@ -7,7 +7,7 @@
  */
  
 include 'СhangeOrder.php';
-//include 'MakeOrder.php';
+include 'MakeOrder.php';
 file_put_contents("fb.txt",file_get_contents("php://input"));
 $fb = file_get_contents("fb.txt");
 $fb = json_decode($fb);
@@ -18,7 +18,7 @@ $token = "EAAUZC7GZBxEEoBACm7cbsg5nEauPoEaZBvugt12mKA8svRpP1NWiiNxrDE78EQLsz8VJ0
 $fp = json_decode(file_get_contents('user.json'), true);
 
 $rus = new СhangeOrder;
-//$MakeCheck = new MakeOrder;
+$MakeCheck = new MakeOrder;
 
 $dbHost='upperl.mysql.ukraine.com.ua';// чаще всего это так, но иногда требуется прописать ip адрес базы данных
 $dbName='upperl_vadik';// название вашей базы
