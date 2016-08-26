@@ -267,29 +267,11 @@ switch ($message) {
         break;
           default:
            switch($before){
-            case 'pizza Type':                                                                                                                                              
-           $findme   = ',';
-           $button = explode($findme, $rows['pizzaSize']);
+           case 'pizza Type':   
+           $text = "pizza Size";
+           $data = $MakeCheck->GetOrderMenu($rows, $id, $text);
            
-           for($j = 0; $j < count($button); $j ++){
-            
-            ${$button[$j]}= array(
-            "content_type" => "text",
-            "title" => "$button[$j]",
-            "payload" => "$button[$j]"
-            );
-            $keyboardSize[$j] = ${$button[$j]};
-            
-            }
-            
-            $data = array(
-           'recipient' => array('id' => "$id" ),
-           'message' => array("text" => "Size",
-           "quick_replies" => json_encode($keyboardSize)
-           )
-           );
-           
-           $mass[$id] = "pizza Size";
+           $mass[$id] = $text;
            $arr3 = json_encode($mass);
            file_put_contents('user.json', $arr3);
            //file_put_contents("errors.txt","Size");
@@ -298,30 +280,15 @@ switch ($message) {
            
             break;   
              
-             case 'pizza Size':                                                                                                                                              
-             $findme   = ',';
-           $button = explode($findme, $rows['pizzaSouce']);
+             case 'pizza Size': 
+              
+              $text = "pizzaSouce";
+           $data = $MakeCheck->GetOrderMenu($rows, $id, $text);
            
-           for($j = 0; $j < count($button); $j ++){
-            
-            ${$button[$j]}= array(
-            "content_type" => "text",
-            "title" => "$button[$j]",
-            "payload" => "$button[$j]"
-            );
-            $keyboardSouce[$j] = ${$button[$j]};
-            
-            }
-            
-            $data = array(
-           'recipient' => array('id' => "$id" ),
-           'message' => array("text" => "Souce",
-           "quick_replies" => json_encode($keyboardSouce)
-           )
-           );
-           $mass[$id] = "pizza Souce";
+           $mass[$id] = $text;
            $arr3 = json_encode($mass);
            file_put_contents('user.json', $arr3);
+              
            //file_put_contents("errors.txt","Souce");
            $rus->ChangePizzaSize($link,$message,$id);
           
