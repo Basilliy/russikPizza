@@ -31,11 +31,7 @@ class MakeOrder{
            );
            return $data;
   }
-  
-}
-
-
-  function GetOrderMenuOhneSelection($rows, $id, $text){
+    function GetOrderMenuOhneSelection($rows, $id, $text){
     file_put_contents("errors.txt",$text);
      $data = array(
            'recipient' => array('id' => "$id" ),
@@ -44,7 +40,6 @@ class MakeOrder{
            );
            return $data;
   }
-  
 }
 
 
