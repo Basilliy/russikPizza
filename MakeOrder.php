@@ -33,9 +33,10 @@ class MakeOrder{
   }
     function GetOrderMenuOhneSelection($id, $text){
     file_put_contents("errors.txt",$text);
+    $mess = "Enter ".$text;
      $data = array(
            'recipient' => array('id' => "$id" ),
-           'message' => array("text" => "Enter ".$text
+           'message' => array("text" => "$mess"
            )
            );
            return $data;
