@@ -36,7 +36,7 @@ $link->set_charset("utf8");
 //echo 'Соединение успешно установлено';
 
 if(($message=='pizzaType')||($message=='pizzaSize')||($message=='pizzaQuantity')||($message=='phoneNumber')||($message=='Adress')||($message=='pizzaSouce')){
-$data = $MakeCheck->GetOrderMenu($rows, $id, $message);
+$data = $MakeCheck->GetOrderMenuWithSelection($rows, $id, $message);
 //file_put_contents("errors.txt",$MakeCheck->printHi());
 // $mass[$id] = $message;
 //$arr3 = json_encode($mass);
@@ -227,7 +227,7 @@ switch ($message) {
             }
             
            $text = 'pizzaType';
-         $data = $MakeCheck->GetOrderMenu($rows, $id, $text);
+         $data = $MakeCheck->GetOrderMenuWithSelection($rows, $id, $text);
            
            $mass[$id] = $text;
            $arr3 = json_encode($mass);
@@ -271,7 +271,7 @@ switch ($message) {
            switch($before){
            case 'pizzaType':   
            $text = "pizzaSize";
-           $data = $MakeCheck->GetOrderMenu($rows, $id, $text);
+           $data = $MakeCheck->GetOrderMenuWithSelection($rows, $id, $text);
            
            $mass[$id] = $text;
            $arr3 = json_encode($mass);
@@ -285,7 +285,7 @@ switch ($message) {
              case 'pizzaSize': 
               
               $text = "pizzaSouce";
-           $data = $MakeCheck->GetOrderMenu($rows, $id, $text);
+           $data = $MakeCheck->GetOrderMenuWithSelection($rows, $id, $text);
            
            $mass[$id] = $text;
            $arr3 = json_encode($mass);
