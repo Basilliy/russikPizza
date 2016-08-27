@@ -299,7 +299,7 @@ switch ($message) {
              case 'pizzaSouce':                                                                                                                                              
              $data = array(
            'recipient' => array('id' => "$id" ),
-           'message' => array("text" => "Enter "
+           'message' => array("text" => "Enter ",
            )
            );
            $mass[$id] = "pizzaQuantity";
@@ -315,7 +315,7 @@ switch ($message) {
               case 'pizzaQuantity':                                                                                                                                              
              $data = array(
            'recipient' => array('id' => "$id" ),
-           'message' => array("text" => "Enter "
+           'message' => array("text" => "Enter ",
            )
            );
            $mass[$id] = "phoneNumber";
@@ -329,7 +329,7 @@ switch ($message) {
               case 'phoneNumber':                                                                                                                                              
              $data = array(
            'recipient' => array('id' => "$id" ),
-           'message' => array("text" => "Enter "
+           'message' => array("text" => "Enter ",
            )
            );
            $mass[$id] = "Adress";
