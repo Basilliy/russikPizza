@@ -296,7 +296,8 @@ switch ($message) {
           
              break;  
                
-             case 'pizzaSouce':                                                                                                                                              
+             case 'pizzaSouce':
+              $text = "pizzaQuantity";
              $data = $MakeCheck->GetOrderMenuOhneSelection($id, $text);
            $mass[$id] = "pizzaQuantity";
            $arr3 = json_encode($mass);
@@ -308,7 +309,8 @@ switch ($message) {
              break;  
               
               
-              case 'pizzaQuantity':                                                                                                                                              
+              case 'pizzaQuantity':   
+                $text = "phoneNumber";
              $data = $MakeCheck->GetOrderMenuOhneSelection($id, $text);
            $mass[$id] = "phoneNumber";
            $arr3 = json_encode($mass);
@@ -318,7 +320,8 @@ switch ($message) {
            
              break;
                
-              case 'phoneNumber':                                                                                                                                              
+              case 'phoneNumber':    
+             $text = "Adress";
              $data = $MakeCheck->GetOrderMenuOhneSelection($id, $text);
            $mass[$id] = "Adress";
            $arr3 = json_encode($mass);
