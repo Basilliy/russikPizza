@@ -25,7 +25,7 @@ class MakeOrder{
             }
            $data = array(
            'recipient' => array('id' => "$id" ),
-           'message' => array("text" => "Pizza type",
+           'message' => array("text" => "$text",
            "quick_replies" => json_encode($keyboardMenu)
            )
            );
