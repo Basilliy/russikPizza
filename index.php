@@ -52,9 +52,10 @@ $mass[$id] = "Get Update phoneNumber";
 $be = json_decode(file_get_contents('user.json'), true);
 //$text = $be['1275823659124425'];
 
-$up = file_get_contents('user.json');
 
-file_put_contents("errors.txt",$up[$id]);
+$findme   = ' ';
+$ru = explode($findme, $be);
+file_put_contents("errors.txt",$ru);
 
 
 foreach ( $be as $key=> $value) {
