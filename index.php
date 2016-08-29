@@ -70,14 +70,6 @@ $mass[$id] = "GetUpdate ".$message;
 }
 
 
-if(($message=='pizzaType')||($message=='pizzaSize')||($message=='pizzaSouce')){
-$data = $MakeCheck->GetOrderMenuWithSelection($rows, $id, $message);
-$mass[$id] = "GetUpdate ".$message;
-           $arr3 = json_encode($mass);
-           file_put_contents('user.json', $arr3);
-}
-
-
 $query = 'SELECT COUNT(1) FROM russik';
 $count = $link->query($query) or die('Запрос не удался: ' . mysql_error());
            
