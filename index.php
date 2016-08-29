@@ -35,18 +35,6 @@ $link->set_charset("utf8");
 //    or die('Не удалось соединиться: ' . mysql_error());
 //echo 'Соединение успешно установлено';
 
-if(($message=='pizzaType')||($message=='pizzaSize')||($message=='pizzaQuantity')){
-$data = $MakeCheck->GetOrderMenuWithSelection($rows, $id, $message);
-
-}
-if(($message=='phoneNumber')||($message=='Adress')||($message=='pizzaSouce')){
- $data = $MakeCheck->GetOrderMenuOhneSelection($id, $message);
-}
-
-
-$mass[$id] = "GetUpdate phoneNumber";
-           $arr3 = json_encode($mass);
-           file_put_contents('user.json', $arr3);
 
 //$before = file_get_contents("errors.txt");
 $be = json_decode(file_get_contents('user.json'), true);
@@ -66,6 +54,29 @@ foreach ( $be as $key=> $value) {
 $findme   = ' ';
 $ru = explode($findme, $before);
 file_put_contents("errors.txt",$ru[0]);
+
+if(($message=='pizzaType')||($message=='pizzaSize')||($message=='pizzaQuantity')){
+$data = $MakeCheck->GetOrderMenuWithSelection($rows, $id, $message);
+$mass[$id] = "GetUpdate ".$message;
+           $arr3 = json_encode($mass);
+           file_put_contents('user.json', $arr3);
+}
+
+if(($message=='phoneNumber')||($message=='Adress')||($message=='pizzaQuantity')){
+ $data = $MakeCheck->GetOrderMenuOhneSelection($id, $message);
+$mass[$id] = "GetUpdate ".$message;
+           $arr3 = json_encode($mass);
+           file_put_contents('user.json', $arr3);
+}
+
+
+if(($message=='pizzaType')||($message=='pizzaSize')||($message=='pizzaSouce')){
+$data = $MakeCheck->GetOrderMenuWithSelection($rows, $id, $message);
+$mass[$id] = "GetUpdate ".$message;
+           $arr3 = json_encode($mass);
+           file_put_contents('user.json', $arr3);
+}
+
 
 $query = 'SELECT COUNT(1) FROM russik';
 $count = $link->query($query) or die('Запрос не удался: ' . mysql_error());
@@ -170,6 +181,62 @@ $Map = array(
         )
  );
 
+
+
+if($ru[0]=='GetUpdate'){
+ 
+if($ru[1]=='phoneNumber'){
+$rus->ChangePhoneNumber($link,$message,$id);
+}
+
+if($ru[1]=='Adress'){
+$rus->ChangeAdress($link,$message,$id);
+}
+
+if($ru[1]=='pizzaSouce'){
+$rus->ChangePizzaSouce($link,$message,$id);
+}
+
+if($ru[1]=='pizzaType'){
+$rus->ChangePizzaType($link,$message,$id);
+}
+
+if($ru[1]=='pizzaSize'){
+$rus->ChangePizzaSize($link,$message,$id);
+}
+if($ru[1]=='pizzaQuantity'){
+$rus->ChangePizzaQuantity($link,$message,$id);
+}
+
+ $query = 'SELECT * FROM russik';
+                $order = $link->query($query) or die('Запрос не удался: ' . mysql_error());
+               // print_r($result);
+               $menu = $order->fetch_assoc();
+                // $mass = $rowas['user_id'];
+                //$arr3 = json_encode($mass);
+                
+                for($i=0; $i < $coun['COUNT(1)']; $i++){
+            //$newId = (string)$mass[$i];
+            if($menu['user_id'] == $id){
+             $final = $menu;
+             //file_put_contents('errors.txt',$final['pizzaType']);
+            }
+             //    $mass[$i] = $menu['user_id'];
+              //   $arr3 = json_encode($mass);
+           }
+                
+               //  file_put_contents('user.json', $arr3);
+                 
+                
+                $data = array(
+           'recipient' => array('id' => "$id" ),
+           'message' => array("text" => "ваш заказ : пицца - ".$final['pizzaType']."\n размер - ".$final['pizzaSize']."\n соус - ".$final['pizzaSouce']."\n количество - ".$final['pizzaQuantity']."\n ваш номер - ".$final['phoneNumber']."\n ваш адресс - ".$final['Adress'],     
+           "quick_replies" => json_encode($keyboardOrder)
+           )
+           );
+
+
+}
 
 
 switch ($message) {
