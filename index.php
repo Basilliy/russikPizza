@@ -54,7 +54,7 @@ $be = json_decode(file_get_contents('user.json'), true);
 
 $up = file_get_contents('user.json');
 
-file_put_contents("errors.txt",$up);
+file_put_contents("errors.txt",$up[$id]);
 
 
 foreach ( $be as $key=> $value) {
