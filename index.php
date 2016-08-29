@@ -93,23 +93,6 @@ $query = 'SELECT * FROM pizzaMenu';
            //$mystring = 'Generate Insult,Language,Homepage';
 
 
-if(($message=='pizzaType')||($message=='pizzaSize')||($message=='pizzaQuantity')){
-file_put_contents('errors.txt',"Enter1");
-$data = $MakeCheck->GetOrderMenuWithSelection($rows, $id, $message);
-$mass[$id] = "GetUpdate ".$message;
-           $arr3 = json_encode($mass);
-           file_put_contents('user.json', $arr3);
-}
-
-if(($message=='phoneNumber')||($message=='Adress')||($message=='pizzaQuantity')){
- $data = $MakeCheck->GetOrderMenuOhneSelection($id, $message);
-$mass[$id] = "GetUpdate ".$message;
-           $arr3 = json_encode($mass);
-           file_put_contents('user.json', $arr3);
-}
-
-
-
 $buttonMenu = array(
         "content_type" => "text",
         "title" => "Pizza Menu",
@@ -439,14 +422,15 @@ switch ($message) {
              break;
                
                
-            default:   
+            default: 
+
             $data = array(
            'recipient' => array('id' => "$id" ),
            'message' => array("text" => "Hello",
            "quick_replies" => json_encode($keyboardSet)
            )
            );
-            
+             
             
             
            }
@@ -455,6 +439,21 @@ switch ($message) {
           
 }           
            
+if(($message=='pizzaType')||($message=='pizzaSize')||($message=='pizzaQuantity')){
+file_put_contents('errors.txt',"Enter1");
+$data = $MakeCheck->GetOrderMenuWithSelection($rows, $id, $message);
+$mass[$id] = "GetUpdate ".$message;
+           $arr3 = json_encode($mass);
+           file_put_contents('user.json', $arr3);
+}
+
+if(($message=='phoneNumber')||($message=='Adress')||($message=='pizzaQuantity')){
+ $data = $MakeCheck->GetOrderMenuOhneSelection($id, $message);
+$mass[$id] = "GetUpdate ".$message;
+           $arr3 = json_encode($mass);
+           file_put_contents('user.json', $arr3);
+}
+
            
            
  $options = array(
