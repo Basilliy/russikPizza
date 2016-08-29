@@ -35,14 +35,16 @@ $link->set_charset("utf8");
 //    or die('Не удалось соединиться: ' . mysql_error());
 //echo 'Соединение успешно установлено';
 
-if(($message=='pizzaType')||($message=='pizzaSize')||($message=='pizzaQuantity')||($message=='phoneNumber')||($message=='Adress')||($message=='pizzaSouce')){
+if(($message=='pizzaType')||($message=='pizzaSize')||($message=='pizzaQuantity')){
 $data = $MakeCheck->GetOrderMenuWithSelection($rows, $id, $message);
 //file_put_contents("errors.txt",$MakeCheck->printHi());
 // $mass[$id] = $message;
 //$arr3 = json_encode($mass);
 //file_put_contents('user.json', $arr3);
 }
-
+if(($message=='phoneNumber')||($message=='Adress')||($message=='pizzaSouce')){
+ $data = $MakeCheck->GetOrderMenuOhneSelection($id, $message);
+}
 //$before = file_get_contents("errors.txt");
 $be = json_decode(file_get_contents('user.json'), true);
 //$text = $be['1275823659124425'];
