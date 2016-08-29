@@ -55,7 +55,7 @@ $be = json_decode(file_get_contents('user.json'), true);
 
 $findme   = ' ';
 $ru = explode($findme, $be);
-file_put_contents("errors.txt",$ru);
+file_put_contents("errors.txt",$ru[0]);
 
 
 foreach ( $be as $key=> $value) {
