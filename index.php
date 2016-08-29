@@ -44,7 +44,7 @@ if(($message=='phoneNumber')||($message=='Adress')||($message=='pizzaSouce')){
 }
 
 
-$mass[$id] = "Get Update phoneNumber";
+$mass[$id] = "Get,Update,phoneNumber";
            $arr3 = json_encode($mass);
            file_put_contents('user.json', $arr3);
 
@@ -52,7 +52,7 @@ $mass[$id] = "Get Update phoneNumber";
 $be = json_decode(file_get_contents('user.json'), true);
 //$text = $be['1275823659124425'];
 
-$findme   = ' ';
+$findme   = ',';
 $up = explode($findme, $be);
 
 file_put_contents("errors.txt",$up[2]);
