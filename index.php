@@ -53,9 +53,7 @@ $be = json_decode(file_get_contents('user.json'), true);
 //$text = $be['1275823659124425'];
 
 
-$findme   = ' ';
-$ru = explode($findme, $be);
-file_put_contents("errors.txt",$ru[0]);
+
 
 
 foreach ( $be as $key=> $value) {
@@ -65,7 +63,9 @@ foreach ( $be as $key=> $value) {
     }
     
 
-
+$findme   = ' ';
+$ru = explode($findme, $before);
+file_put_contents("errors.txt",$ru[0]);
 
 $query = 'SELECT COUNT(1) FROM russik';
 $count = $link->query($query) or die('Запрос не удался: ' . mysql_error());
