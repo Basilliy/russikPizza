@@ -37,9 +37,7 @@ $link->set_charset("utf8");
 
 if(($message=='pizzaType')||($message=='pizzaSize')||($message=='pizzaQuantity')){
 $data = $MakeCheck->GetOrderMenuWithSelection($rows, $id, $message);
-$mass[$id] = "Get Update phoneNumber";
-           $arr3 = json_encode($mass);
-           file_put_contents('user.json', $arr3);
+
 }
 if(($message=='phoneNumber')||($message=='Adress')||($message=='pizzaSouce')){
  $data = $MakeCheck->GetOrderMenuOhneSelection($id, $message);
@@ -52,6 +50,9 @@ if(($message=='phoneNumber')||($message=='Adress')||($message=='pizzaSouce')){
 $be = json_decode(file_get_contents('user.json'), true);
 //$text = $be['1275823659124425'];
 
+$mass[$id] = "Get Update phoneNumber";
+           $arr3 = json_encode($mass);
+           file_put_contents('user.json', $arr3);
 
 //file_put_contents("errors.txt",$MakeCheck->printHi());
 
