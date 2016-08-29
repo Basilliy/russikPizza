@@ -53,21 +53,9 @@ foreach ( $be as $key=> $value) {
 
 $findme   = ' ';
 $ru = explode($findme, $before);
-file_put_contents("errors.txt",$ru[0]);
+//file_put_contents("errors.txt",$ru[0]);
 
-if(($message=='pizzaType')||($message=='pizzaSize')||($message=='pizzaQuantity')){
-$data = $MakeCheck->GetOrderMenuWithSelection($rows, $id, $message);
-$mass[$id] = "GetUpdate ".$message;
-           $arr3 = json_encode($mass);
-           file_put_contents('user.json', $arr3);
-}
 
-if(($message=='phoneNumber')||($message=='Adress')||($message=='pizzaQuantity')){
- $data = $MakeCheck->GetOrderMenuOhneSelection($id, $message);
-$mass[$id] = "GetUpdate ".$message;
-           $arr3 = json_encode($mass);
-           file_put_contents('user.json', $arr3);
-}
 
 
 $query = 'SELECT COUNT(1) FROM russik';
@@ -103,6 +91,21 @@ $query = 'SELECT * FROM pizzaMenu';
            $rows = $result->fetch_assoc();
 //print_r($rows['pizzaType']);
            //$mystring = 'Generate Insult,Language,Homepage';
+
+
+if(($message=='pizzaType')||($message=='pizzaSize')||($message=='pizzaQuantity')){
+$data = $MakeCheck->GetOrderMenuWithSelection($rows, $id, $message);
+$mass[$id] = "GetUpdate ".$message;
+           $arr3 = json_encode($mass);
+           file_put_contents('user.json', $arr3);
+}
+
+if(($message=='phoneNumber')||($message=='Adress')||($message=='pizzaQuantity')){
+ $data = $MakeCheck->GetOrderMenuOhneSelection($id, $message);
+$mass[$id] = "GetUpdate ".$message;
+           $arr3 = json_encode($mass);
+           file_put_contents('user.json', $arr3);
+}
 
 
 
