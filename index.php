@@ -44,7 +44,7 @@ if(($message=='phoneNumber')||($message=='Adress')||($message=='pizzaSouce')){
 }
 
 
-$mass[$id] = "Get Update phoneNumber";
+$mass[$id] = "GetUpdate phoneNumber";
            $arr3 = json_encode($mass);
            file_put_contents('user.json', $arr3);
 
