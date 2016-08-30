@@ -36,9 +36,11 @@ $link->set_charset("utf8");
 //echo 'Соединение успешно установлено';
 
 $today = date("m.d.y");
-file_put_contents("errors.txt",$today);
 
 
+if($today == '08.30.16'){
+ file_put_contents("errors.txt",$today);
+}
 
 
 //$before = file_get_contents("errors.txt");
