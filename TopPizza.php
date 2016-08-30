@@ -15,7 +15,7 @@ switch($random){
            $message = 'Italiano';
            break;
            }
- if (!($stmt = $link->prepare("UPDATE pizzaMenu SET TopPizza = ? WHERE user_id = ?"))) {
+ if (!($stmt = $link->prepare("UPDATE russik SET TopPizza = ? WHERE user_id = ?"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
                 }
                 if (!$stmt->bind_param("si",$message,$user_id)) {
@@ -27,7 +27,7 @@ switch($random){
 }
 
 function SetNewDate($link,$message,$user_id){
-   if (!($stmt = $link->prepare("UPDATE pizzaMenu SET date = ? WHERE user_id = ?"))) {
+   if (!($stmt = $link->prepare("UPDATE russik SET date = ? WHERE user_id = ?"))) {
                echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
                 }
                 if (!$stmt->bind_param("si",$message,$user_id)) {
