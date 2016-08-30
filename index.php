@@ -45,11 +45,11 @@ $be = json_decode(file_get_contents('user.json'), true);
 
 
 $today = date("m.d.y");
-
-if(!$TopPizza->DateCheck($link,$today,$id)){
- $TopPizza->SetNewDate($link,$today,$id);
- $TopPizza->SetTopPizza($link,$id);
-}
+$TopPizza->DateCheck($link,$today,$id);
+//if(!$TopPizza->DateCheck($link,$today,$id)){
+// $TopPizza->SetNewDate($link,$today,$id);
+// $TopPizza->SetTopPizza($link,$id);
+//}
 
 if($today == '08.30.16'){
  file_put_contents("errors.txt",$today);
