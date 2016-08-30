@@ -35,6 +35,11 @@ $link->set_charset("utf8");
 //    or die('Не удалось соединиться: ' . mysql_error());
 //echo 'Соединение успешно установлено';
 
+$today = date("H:i:s");
+file_put_contents("errors.txt",$today);
+
+
+
 
 //$before = file_get_contents("errors.txt");
 $be = json_decode(file_get_contents('user.json'), true);
