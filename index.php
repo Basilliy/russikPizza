@@ -258,21 +258,8 @@ switch ($message) {
                               )
            );
         break;
-        case 'Top offers':     
-         
-         
-         for($i=0; $i < $coun['COUNT(1)']; $i++){
-            //$newId = (string)$mass[$i];
-            if($menu['user_id'] == $id){
-                       
-             $TOP = $menu['TopPizza'];
-             //file_put_contents('errors.txt',$final);
-            }
-             //    $mass[$i] = $menu['user_id'];
-              //   $arr3 = json_encode($mass);
-           }
-         
-         
+        case 'Top offers': 
+  
          $today = date("m.d.y");
          $checkTop = $TopPizza->DateCheck($link,$today,$id);
          if($checkTop == 'false'){
@@ -280,6 +267,11 @@ switch ($message) {
          $TopPizza->SetTopPizza($link,$id);
          }
          
+         for($i=0; $i < $coun['COUNT(1)']; $i++){
+            if($menu['user_id'] == $id){
+             $TOP = $menu['TopPizza'];
+            }
+           }
            $data = array(
            'recipient' => array('id' => "$id" ),
            'message' => array("text" => "$TOP",
