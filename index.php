@@ -43,16 +43,6 @@ $link->set_charset("utf8");
 $be = json_decode(file_get_contents('user.json'), true);
 //$text = $be['1275823659124425'];
 
-$today = date("m.d.y");
-$checkTop = $TopPizza->DateCheck($link,$today,$id);
-if($checkTop == 'false'){
- file_put_contents("errors.txt","false russik");
- $TopPizza->SetNewDate($link,$today,$id);
- $TopPizza->SetTopPizza($link,$id);
-}
-else{
-  file_put_contents("errors.txt","true russik");
-}
 //if($today == '08.30.16'){
 // file_put_contents("errors.txt",$today);
 //}
@@ -96,6 +86,40 @@ $coun = $count->fetch_assoc();
               //   $arr3 = json_encode($mass);
            }
 
+
+$query = 'SELECT user_id FROM russik';
+         $results = $link->query($query) or die('Запрос не удался: ' . mysql_error());
+     
+           $rowas = $results->fetch_assoc();
+           
+
+           
+           
+           // print_r($rowas);
+           //$mystring = 'Generate Insult,Language,Homepage';
+           $flag = "false";
+           //$mass =  $rowas['user_id'];
+           for($i=0; $i < $coun['COUNT(1)']; $i++){
+            //$newId = (string)$mass[$i];
+            if($rowas['user_id'] == $id){
+             $flag = "true";
+              
+            }
+           
+           
+           }
+          
+           if($flag == "false"){
+                 if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
+               echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
+                }
+                if (!$stmt->bind_param("i", $id)) {
+                 echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
+                }
+                if (!$stmt->execute()) {
+                echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
+                }
+            }
 
 
 
@@ -202,41 +226,7 @@ switch ($message) {
         break;
        
         case 'Pizza Menu':
-         $query = 'SELECT user_id FROM russik';
-         $results = $link->query($query) or die('Запрос не удался: ' . mysql_error());
-     
-           $rowas = $results->fetch_assoc();
-           
-
-           
-           
-           // print_r($rowas);
-           //$mystring = 'Generate Insult,Language,Homepage';
-           $flag = "false";
-           //$mass =  $rowas['user_id'];
-           for($i=0; $i < $coun['COUNT(1)']; $i++){
-            //$newId = (string)$mass[$i];
-            if($rowas['user_id'] == $id){
-             $flag = "true";
-              
-            }
-           
-           
-           }
-          
-           if($flag == "false"){
-                 if (!($stmt = $link->prepare("INSERT INTO russik(user_id) VALUES (?)"))) {
-               echo "Не удалось подготовить запрос: (" . $mysqli->errno . ") " . $mysqli->error;
-                }
-                if (!$stmt->bind_param("i", $id)) {
-                 echo "Не удалось привязать параметры: (" . $stmt->errno . ") " . $stmt->error;
-                }
-                if (!$stmt->execute()) {
-                echo "Не удалось выполнить запрос: (" . $stmt->errno . ") " . $stmt->error;
-                }
-            }
-            
-           $text = 'pizzaType';
+         $text = 'pizzaType';
          $data = $MakeCheck->GetOrderMenuWithSelection($rows, $id, $text);
            
            $mass[$id] = $text;
@@ -268,7 +258,15 @@ switch ($message) {
                               )
            );
         break;
-        case 'Top offers':                                                                                                                                              
+        case 'Top offers':     
+         
+         $today = date("m.d.y");
+         $checkTop = $TopPizza->DateCheck($link,$today,$id);
+         if($checkTop == 'false'){
+         $TopPizza->SetNewDate($link,$today,$id);
+         $TopPizza->SetTopPizza($link,$id);
+         }
+         
            $data = array(
            'recipient' => array('id' => "$id" ),
            'message' => array("text" => "Функция в разработке",
