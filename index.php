@@ -43,12 +43,11 @@ $link->set_charset("utf8");
 $be = json_decode(file_get_contents('user.json'), true);
 //$text = $be['1275823659124425'];
 
-
 $today = date("m.d.y");
 $checkTop = $TopPizza->DateCheck($link,$today,$id);
 if($checkTop == 'false'){
  file_put_contents("errors.txt","false russik");
- //$TopPizza->SetNewDate($link,$today,$id);
+ $TopPizza->SetNewDate($link,$today,$id);
 // $TopPizza->SetTopPizza($link,$id);
 }
 else{
