@@ -35,7 +35,7 @@ $link->set_charset("utf8");
 //    or die('Не удалось соединиться: ' . mysql_error());
 //echo 'Соединение успешно установлено';
 
-$today = date("H:i:s");
+$today = date("m.d.y");
 file_put_contents("errors.txt",$today);
 
 
