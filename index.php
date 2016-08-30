@@ -51,7 +51,9 @@ if($checkTop == 'false'){
 // $TopPizza->SetNewDate($link,$today,$id);
 // $TopPizza->SetTopPizza($link,$id);
 }
-
+else{
+  file_put_contents("errors.txt","true russik");
+}
 //if($today == '08.30.16'){
 // file_put_contents("errors.txt",$today);
 //}
