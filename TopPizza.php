@@ -63,7 +63,8 @@ $coun = $count->fetch_assoc();
               //   $arr3 = json_encode($mass);
            }  
    if($date!=$message){
-      $important = false;        
+      $important = false;
+      file_put_contents("errors.txt","false");
    }        
  return $important;
 }
