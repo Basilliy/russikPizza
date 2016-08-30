@@ -40,7 +40,7 @@ function SetNewDate($link,$message,$user_id){
 
 function DateCheck($link,$message,$user_id){
 
-$important = true;
+$important = 'true';
 $query = 'SELECT COUNT(1) FROM russik';
 $count = $link->query($query) or die('Запрос не удался: ' . mysql_error());
 $coun = $count->fetch_assoc();
@@ -63,8 +63,8 @@ $coun = $count->fetch_assoc();
               //   $arr3 = json_encode($mass);
            }  
    if($date!=$message){
-      $important = false;
-      file_put_contents("errors.txt","false");
+      $important = 'false';
+      
    }        
  return $important;
 }
