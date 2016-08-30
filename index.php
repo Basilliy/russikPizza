@@ -8,6 +8,8 @@
  
 include 'СhangeOrder.php';
 include 'MakeOrder.php';
+include 'TopPizza.php';
+
 file_put_contents("fb.txt",file_get_contents("php://input"));
 $fb = file_get_contents("fb.txt");
 $fb = json_decode($fb);
@@ -19,6 +21,7 @@ $fp = json_decode(file_get_contents('user.json'), true);
 
 $rus = new СhangeOrder;
 $MakeCheck = new MakeOrder;
+$TopPizza = new TopPizza;
 
 $dbHost='upperl.mysql.ukraine.com.ua';// чаще всего это так, но иногда требуется прописать ip адрес базы данных
 $dbName='upperl_vadik';// название вашей базы
@@ -35,20 +38,22 @@ $link->set_charset("utf8");
 //    or die('Не удалось соединиться: ' . mysql_error());
 //echo 'Соединение успешно установлено';
 
-$today = date("m.d.y");
-
-
-if($today == '08.30.16'){
- file_put_contents("errors.txt",$today);
-}
-
 
 //$before = file_get_contents("errors.txt");
 $be = json_decode(file_get_contents('user.json'), true);
 //$text = $be['1275823659124425'];
 
 
+$today = date("m.d.y");
 
+if(!$TopPizza->DateCheck($link,$today,$id)){
+ $TopPizza->SetNewDate($link,$today,$id);
+ $TopPizza->SetTopPizza($link,$id);
+}
+
+if($today == '08.30.16'){
+ file_put_contents("errors.txt",$today);
+}
 
 
 foreach ( $be as $key=> $value) {
