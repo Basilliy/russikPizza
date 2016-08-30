@@ -51,9 +51,9 @@ $TopPizza->DateCheck($link,$today,$id);
 // $TopPizza->SetTopPizza($link,$id);
 //}
 
-if($today == '08.30.16'){
- file_put_contents("errors.txt",$today);
-}
+//if($today == '08.30.16'){
+// file_put_contents("errors.txt",$today);
+//}
 
 
 foreach ( $be as $key=> $value) {
