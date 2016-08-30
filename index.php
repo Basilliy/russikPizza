@@ -45,11 +45,12 @@ $be = json_decode(file_get_contents('user.json'), true);
 
 
 $today = date("m.d.y");
-$TopPizza->DateCheck($link,$today,$id);
-//if(!$TopPizza->DateCheck($link,$today,$id)){
+$checkTop = $TopPizza->DateCheck($link,$today,$id);
+if($checkTop == 'false'){
+ file_put_contents("errors.txt","false russik");
 // $TopPizza->SetNewDate($link,$today,$id);
 // $TopPizza->SetTopPizza($link,$id);
-//}
+}
 
 //if($today == '08.30.16'){
 // file_put_contents("errors.txt",$today);
