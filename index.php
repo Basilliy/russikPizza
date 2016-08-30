@@ -48,7 +48,7 @@ $checkTop = $TopPizza->DateCheck($link,$today,$id);
 if($checkTop == 'false'){
  file_put_contents("errors.txt","false russik");
  $TopPizza->SetNewDate($link,$today,$id);
-// $TopPizza->SetTopPizza($link,$id);
+ $TopPizza->SetTopPizza($link,$id);
 }
 else{
   file_put_contents("errors.txt","true russik");
