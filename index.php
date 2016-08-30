@@ -383,7 +383,6 @@ switch ($message) {
 }           
            
 if(($message=='pizzaType')||($message=='pizzaSize')||($message=='pizzaQuantity')){
-file_put_contents('errors.txt',"Enter1");
 $data = $MakeCheck->GetOrderMenuWithSelection($rows, $id, $message);
 $mass[$id] = "GetUpdate ".$message;
            $arr3 = json_encode($mass);
