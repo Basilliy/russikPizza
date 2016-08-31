@@ -279,12 +279,26 @@ switch ($message) {
              $TOP = $menu['TopPizza'];
             }
            }
-           $data = array(
+           
+           $attachment = array( "type" => "image",
+            "payload" => array("url" => "http://cookdiary.net/wp-content/uploads/images/Gourmet-Pizza.jpg")
+            );
+           
+            $data = array(
            'recipient' => array('id' => "$id" ),
-           'message' => array("text" => "$TOP",
-           "quick_replies" => json_encode($keyboardSet)
+           'message' => array("attachment" => "$attachment"
             )
            );
+           
+           
+           
+           
+          // $data = array(
+         //  'recipient' => array('id' => "$id" ),
+         //  'message' => array("text" => "$TOP",
+        //   "quick_replies" => json_encode($keyboardSet)
+         //   )
+        //   );
            
         break;
           default:
