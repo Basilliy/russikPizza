@@ -290,6 +290,24 @@ switch ($message) {
             "payload" => array("url" => "$url")
             );
            
+           
+            $datar = array(
+           'recipient' => array('id' => "$id" ),
+           'message' => array("attachment" => json_encode($attachment)
+            )
+           );
+           
+            $optionsr = array(
+          'http' => array(
+             'method' => 'POST',
+             'content' => json_encode($datar),
+             'header' => "Content-Type: application/json"
+             )
+ );
+           $contextr = stream_context_create($optionsr);
+file_get_contents("https://graph.facebook.com/v2.7/me/messages?access_token=$token",false, $contextr);
+           
+           
            $date = array(
            'recipient' => array('id' => "$id" ),
            'message' => array("text" => " ",
@@ -298,12 +316,8 @@ switch ($message) {
            );
            
            
-            $data = array(
-           'recipient' => array('id' => "$id" ),
-           'message' => array("attachment" => json_encode($attachment)
-            )
-           );
            
+
            
           // $data = array(
          //  'recipient' => array('id' => "$id" ),
