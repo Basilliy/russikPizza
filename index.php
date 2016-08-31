@@ -279,11 +279,23 @@ switch ($message) {
              $TOP = $menu['TopPizza'];
             }
            }
-           
+           if($TOP=='Neapolitan')
            $url = "https://presentpizza.herokuapp.com/Neapolitan.jpg";
+           if($TOP=='Gourmet')
+           $url = "https://presentpizza.herokuapp.com/Gourmet.jpg";
+           if($TOP=='Italiano')
+           $url = "https://presentpizza.herokuapp.com/Italiano.jpg";
+           
            $attachment = array( "type" => "image",
             "payload" => array("url" => "$url")
             );
+           
+           $date = array(
+           'recipient' => array('id' => "$id" ),
+           'message' => array("text" => " ",
+           "quick_replies" => json_encode($keyboardSet)
+            )
+           );
            
             $data = array(
            'recipient' => array('id' => "$id" ),
