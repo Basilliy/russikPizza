@@ -267,6 +267,13 @@ switch ($message) {
          $TopPizza->SetTopPizza($link,$id);
          }
          
+         $query = 'SELECT * FROM russik';
+         $offers = $link->query($query) or die('Запрос не удался: ' . mysql_error());
+         
+         $menu = $offers->fetch_assoc();
+         
+         
+         
          for($i=0; $i < $coun['COUNT(1)']; $i++){
             if($menu['user_id'] == $id){
              $TOP = $menu['TopPizza'];
