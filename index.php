@@ -280,9 +280,9 @@ switch ($message) {
             }
            }
            
-          // $url = "https://presentpizza.herokuapp.com/Neapolitan.jpg"
+           $url = "https://presentpizza.herokuapp.com/Neapolitan.jpg";
            $attachment = array( "type" => "image",
-            "payload" => array("url" => "https://presentpizza.herokuapp.com/Neapolitan.jpg")
+            "payload" => array("url" => "$url")
             );
            
             $data = array(
