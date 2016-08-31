@@ -230,25 +230,30 @@ switch ($message) {
            //file_put_contents("errors.txt","Pizza type");
         break;
         case 'Our location':                                                                                                                                              
-           $data = array(
+          $site =json_encode(array(
+         "type" => "web_url",
+         "url" => " https://www.google.com.ua/maps/@46.4241974,30.7189517,16z?hl=ru",
+         "title" => "Our web site"
+ ));
+$element = array(
+            "title" => "Appartika",
+            "image_url" => "https://presentpizza.herokuapp.com/appartika.jpg",
+            "subtitle" => "Click",
+            "buttons" => [$site]
+             );
+$URL= array(
+         "type" => "template",
+         "payload" => array(
+               "template_type" => "generic",
+               "elements" => [$element]
+        )
+ );
+           $date = array(
            'recipient' => array('id' => "$id" ),
-           'message' => array("attachment" => array(
-                                                   "type" => "template",
-                                                   "payload" => array(
-                                                                     "template_type" => "generic",
-                                                                     "elements" => array(
-                                                                                        "element" => array(
-                                                                                                          "title" => "Your current location",
-                                                                                                          "image_url" => "https://maps.googleapis.com/maps/api/staticmap?center=46.4255,30.7166&zoom=15&size=800x600&markers=icon:http://tinyurl.com/2ftvtt6|46.4223,30.7180&key=AIzaSyBuqlojrVuJBzkuhlitaV5JAJzytLMtPXA",
-                                                                                                           "item_url" => "http:\/\/maps.apple.com\/maps?q="+lat+","+long+"&z=16"
-                   
-                                                                                                          )   
-                                                                                        )
-                                                                     )
-                                                   )
-                             )
+           'message' => array(
+                      "attachment" =>$URL
+                              )
            );
-           
         break;
         case 'Visit our site':                                                                                                                                              
            $data = array(
