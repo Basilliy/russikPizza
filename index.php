@@ -281,7 +281,7 @@ switch ($message) {
            }
            
            $attachment = array( "type" => "image",
-            "payload" => array("url" => "https://presentpizza.herokuapp.com/appartika.jpg")
+            "payload" => array("url" => "https://presentpizza.herokuapp.com/Neapolitan.jpg")
             );
            
             $data = array(
