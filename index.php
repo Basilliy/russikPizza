@@ -190,13 +190,7 @@ $URL= array(
         )
  );
 
-$Map = array(
-         "type" => "location",
-         "payload" => array(
-               "coordinates" => array("lat"=> 55, "long"=> 37)
-               
-        )
- );
+
 
 
 switch ($message) {
@@ -238,9 +232,21 @@ switch ($message) {
         case 'Our location':                                                                                                                                              
            $data = array(
            'recipient' => array('id' => "$id" ),
-           'message' => array("text" => "Функция в разработке",
-           "quick_replies" => json_encode($keyboardSet)
-           )
+           'message' => array("attachment" => array(
+                                                   "type" => "template",
+                                                   "payload" => array(
+                                                                     "template_type" => "generic",
+                                                                     "elements" => array(
+                                                                                        "element" => array(
+                                                                                                          "title" => "Your current location",
+                                                                                                          "image_url" => "https:\/\/maps.googleapis.com\/maps\/api\/staticmap?size=764x400&center="+lat+","+long+"&zoom=25&markers="+lat+","+long,
+                                                                                                           "item_url" => "http:\/\/maps.apple.com\/maps?q="+lat+","+long+"&z=16"
+                   
+                                                                                                          )   
+                                                                                        )
+                                                                     )
+                                                   )
+                             )
            );
            
         break;
