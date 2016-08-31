@@ -290,13 +290,6 @@ switch ($message) {
             "payload" => array("url" => "$url")
             );
            
-            $data = array(
-           'recipient' => array('id' => "$id" ),
-           'message' => array("attachment" => json_encode($attachment)
-            )
-           );
-           
-           
            $date = array(
            'recipient' => array('id' => "$id" ),
            'message' => array("text" => " ",
@@ -305,8 +298,11 @@ switch ($message) {
            );
            
            
-           
-           
+            $data = array(
+           'recipient' => array('id' => "$id" ),
+           'message' => array("attachment" => json_encode($attachment)
+            )
+           );
            
            
           // $data = array(
