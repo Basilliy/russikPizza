@@ -281,12 +281,12 @@ switch ($message) {
            }
            
            $attachment = array( "type" => "image",
-            "payload" => array("url" => "http://cookdiary.net/wp-content/uploads/images/Gourmet-Pizza.jpg")
+            "payload" => array("url" => "https://presentpizza.herokuapp.com/appartika.jpg")
             );
            
             $data = array(
            'recipient' => array('id' => "$id" ),
-           'message' => array("attachment" => "$attachment"
+           'message' => array("attachment" => json_encode($attachment)
             )
            );
            
