@@ -239,7 +239,7 @@ switch ($message) {
                                                                      "elements" => array(
                                                                                         "element" => array(
                                                                                                           "title" => "Your current location",
-                                                                                                          "image_url" => "https:\/\/maps.googleapis.com\/maps\/api\/staticmap?size=764x400&center="+lat+","+long+"&zoom=25&markers="+lat+","+long,
+                                                                                                          "image_url" => "https://maps.googleapis.com/maps/api/staticmap?center=46.4255,30.7166&zoom=15&size=800x600&markers=icon:http://tinyurl.com/2ftvtt6|46.4223,30.7180&key=AIzaSyBuqlojrVuJBzkuhlitaV5JAJzytLMtPXA",
                                                                                                            "item_url" => "http:\/\/maps.apple.com\/maps?q="+lat+","+long+"&z=16"
                    
                                                                                                           )   
