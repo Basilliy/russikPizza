@@ -230,29 +230,33 @@ switch ($message) {
            //file_put_contents("errors.txt","Pizza type");
         break;
         case 'Our location':                                                                                                                                              
-          $site =json_encode(array(
-         "type" => "web_url",
-         "url" => " https://www.google.com.ua/maps/@46.4241974,30.7189517,16z?hl=ru",
-         "title" => "Our web site"
- ));
-$element = array(
-            "title" => "Appartika",
-            "image_url" => "https://presentpizza.herokuapp.com/appartika.jpg",
-            "subtitle" => "Click",
-            "buttons" => [$site]
-             );
-$URL= array(
-         "type" => "template",
-         "payload" => array(
-               "template_type" => "generic",
-               "elements" => [$element]
-        )
+          $attachment = array( "type" => "image",
+            "payload" => array("url" => "https://presentpizza.herokuapp.com/map.jpg")
+            );
+           
+           
+            $datar = array(
+           'recipient' => array('id' => "$id" ),
+           'message' => array("attachment" => json_encode($attachment)
+            )
+           );
+           
+            $optionsr = array(
+          'http' => array(
+             'method' => 'POST',
+             'content' => json_encode($datar),
+             'header' => "Content-Type: application/json"
+             )
  );
+           $contextr = stream_context_create($optionsr);
+file_get_contents("https://graph.facebook.com/v2.7/me/messages?access_token=$token",false, $contextr);
+           
+           
            $date = array(
            'recipient' => array('id' => "$id" ),
-           'message' => array(
-                      "attachment" =>$URL
-                              )
+           'message' => array("text" => " ",
+           "quick_replies" => json_encode($keyboardSet)
+            )
            );
         break;
         case 'Visit our site':                                                                                                                                              
